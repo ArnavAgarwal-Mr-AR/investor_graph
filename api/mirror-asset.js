@@ -1,5 +1,5 @@
 import { PutObjectCommand } from "@aws-sdk/client-s3";
-import s3 from "./_lib/b2-client.js";
+import getB2Client from "./_lib/b2-client.js";
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
@@ -28,6 +28,7 @@ export default async function handler(req, res) {
       ContentType: contentType,
     };
 
+    const s3 = getB2Client();
     await s3.send(new PutObjectCommand(uploadParams));
 
     // 4. Return the key (frontend will use VITE_STORAGE_BASE_URL + this key)

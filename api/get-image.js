@@ -1,5 +1,5 @@
 import { GetObjectCommand } from "@aws-sdk/client-s3";
-import s3 from "./_lib/b2-client.js";
+import getB2Client from "./_lib/b2-client.js";
 
 export default async function handler(req, res) {
   const { key } = req.query;
@@ -14,6 +14,7 @@ export default async function handler(req, res) {
       Key: key,
     });
 
+    const s3 = getB2Client();
     const response = await s3.send(command);
 
     // Set correct content type from B2 metadata

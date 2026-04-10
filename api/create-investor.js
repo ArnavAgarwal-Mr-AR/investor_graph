@@ -1,17 +1,34 @@
 // api/create-investor.js
 import neo4j from 'neo4j-driver';
 
-const driver = neo4j.driver(
-    process.env.NEO4J_URI,
-    neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD)
-);
+let driver;
+
+const getDriver = () => {
+    if (!process.env.NEO4J_URI) {
+        throw new Error("NEO4J_URI is missing in environment variables.");
+    }
+    if (!driver) {
+        driver = neo4j.driver(
+            process.env.NEO4J_URI,
+            neo4j.auth.basic(process.env.NEO4J_USER, process.env.NEO4J_PASSWORD)
+        );
+    }
+    return driver;
+};
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
     const investor = req.body;
     const storageBase = process.env.STORAGE_BASE_URL || "";
-    const session = driver.session();
+    
+    let session;
+    try {
+        const drv = getDriver();
+        session = drv.session();
+    } catch (err) {
+        return res.status(500).json({ error: "Server configuration error: Missing Database Credentials" });
+    }
 
     // Ensure the image URL is properly resolved before saving to the DB
     const finalImageUrl = investor.image.startsWith('http')
