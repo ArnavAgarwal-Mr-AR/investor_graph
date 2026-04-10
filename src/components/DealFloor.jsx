@@ -4,7 +4,27 @@ import { mockInvestors, mockLinks } from '../data/mockEnvironment';
 import CapitalTile from './CapitalTile';
 import Minimap from './Minimap';
 
-export default function DealFloor({ onSelectInvestor, selectedInvestor, isClustered, resetCounter, summonedEntity, activeFilter }) {
+export const CLUSTER_CENTERS = {
+  'ENTERPRISE & SAAS': { x: -600, y: -400 },
+  'FINTECH & WEB3': { x: 600, y: -400 },
+  'CONSUMER & COMMERCE': { x: 800, y: 400 },
+  'DEEPTECH & AI': { x: -800, y: 400 },
+  'CLIMATE & IMPACT': { x: 0, y: 600 },
+  'GROWTH & PE': { x: 0, y: -700 }
+};
+
+export const getPrimaryCluster = (tags) => {
+  const t = tags[0]?.toLowerCase() || '';
+  if (t.includes('saas') || t.includes('enterprise') || t.includes('b2b') || t.includes('software')) return 'ENTERPRISE & SAAS';
+  if (t.includes('fintech') || t.includes('web3') || t.includes('crypto')) return 'FINTECH & WEB3';
+  if (t.includes('consumer') || t.includes('d2c') || t.includes('commerce') || t.includes('marketplace') || t.includes('edtech') || t.includes('health') || t.includes('logistics') || t.includes('media') || t.includes('agritech') || t.includes('retail') || t.includes('classifieds')) return 'CONSUMER & COMMERCE';
+  if (t.includes('deeptech') || t.includes('ai') || t.includes('hardware') || t.includes('robotics')) return 'DEEPTECH & AI';
+  if (t.includes('impact') || t.includes('climate') || t.includes('infrastructure')) return 'CLIMATE & IMPACT';
+  if (t.includes('growth') || t.includes('private equity') || t.includes('late')) return 'GROWTH & PE';
+  return 'ENTERPRISE & SAAS'; // fallback
+};
+
+export default function DealFloor({ onSelectInvestor, selectedInvestor, resetCounter, summonedEntity, activeFilter }) {
   const containerRef = useRef(null);
   const simulationRef = useRef(null);
   
@@ -15,39 +35,19 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, isCluste
   const [, setTick] = useState(0);
   const [viewTransform, setViewTransform] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2, k: 0.5 });
 
-  const clusterCenters = {
-    'ENTERPRISE & SAAS': { x: -600, y: -400 },
-    'FINTECH & WEB3': { x: 600, y: -400 },
-    'CONSUMER & COMMERCE': { x: 800, y: 400 },
-    'DEEPTECH & AI': { x: -800, y: 400 },
-    'CLIMATE & IMPACT': { x: 0, y: 600 },
-    'GROWTH & PE': { x: 0, y: -700 }
-  };
-
-  const getPrimaryCluster = (tags) => {
-    const t = tags[0]?.toLowerCase() || '';
-    if (t.includes('saas') || t.includes('enterprise') || t.includes('b2b') || t.includes('software')) return 'ENTERPRISE & SAAS';
-    if (t.includes('fintech') || t.includes('web3') || t.includes('crypto')) return 'FINTECH & WEB3';
-    if (t.includes('consumer') || t.includes('d2c') || t.includes('commerce') || t.includes('marketplace') || t.includes('edtech') || t.includes('health') || t.includes('logistics') || t.includes('media') || t.includes('agritech') || t.includes('retail') || t.includes('classifieds')) return 'CONSUMER & COMMERCE';
-    if (t.includes('deeptech') || t.includes('ai') || t.includes('hardware') || t.includes('robotics')) return 'DEEPTECH & AI';
-    if (t.includes('impact') || t.includes('climate') || t.includes('infrastructure')) return 'CLIMATE & IMPACT';
-    if (t.includes('growth') || t.includes('private equity') || t.includes('late')) return 'GROWTH & PE';
-    return 'ENTERPRISE & SAAS'; // fallback
-  };
-
   useEffect(() => {
     if (!containerRef.current) return;
     
     const width = window.innerWidth;
     const height = window.innerHeight;
 
-    // Initialize D3 Force Simulation with localized gravity
+    // Initialize D3 Force Simulation with permanent localized gravity
     const simulation = d3.forceSimulation(nodesRef.current)
-      .force('link', d3.forceLink(linksRef.current).id(d => d.id).distance(180).strength(0.3))
-      .force('charge', d3.forceManyBody().strength(-800)) // Reduced repulsion for closer nodes
-      .force('x', d3.forceX(d => clusterCenters[getPrimaryCluster(d.tags)].x).strength(0.12))
-      .force('y', d3.forceY(d => clusterCenters[getPrimaryCluster(d.tags)].y).strength(0.12))
-      .force('collide', d3.forceCollide().radius(140).iterations(3)) 
+      .force('link', d3.forceLink(linksRef.current).id(d => d.id).distance(140).strength(0.6)) // Very strong links
+      .force('charge', d3.forceManyBody().strength(-300)) // Very low repulsion to keep nearby entities dense
+      .force('x', d3.forceX(d => CLUSTER_CENTERS[getPrimaryCluster(d.tags)].x).strength(0.18)) // Strong sector pull
+      .force('y', d3.forceY(d => CLUSTER_CENTERS[getPrimaryCluster(d.tags)].y).strength(0.18))
+      .force('collide', d3.forceCollide().radius(110).iterations(3)) // overlapping bounding bubbles
       .alphaDecay(0.02)
       .on('tick', () => {
         setTick(t => t + 1);
@@ -75,23 +75,6 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, isCluste
       window.removeEventListener('resize', handleResize);
     };
   }, []); // Only run once on mount
-
-  // Handle clustering toggle
-  useEffect(() => {
-    if (!simulationRef.current) return;
-    if (isClustered) {
-      simulationRef.current
-        .force('x', d3.forceX(d => clusterCenters[getPrimaryCluster(d.tags)].x).strength(0.12))
-        .force('y', d3.forceY(d => clusterCenters[getPrimaryCluster(d.tags)].y).strength(0.12))
-        .force('center', null);
-    } else {
-      simulationRef.current
-        .force('x', null)
-        .force('y', null)
-        .force('center', d3.forceCenter(0, 0));
-    }
-    simulationRef.current.alpha(1).restart();
-  }, [isClustered]);
 
   // Handle map reset
   useEffect(() => {
@@ -205,7 +188,7 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, isCluste
       {/* DOM Layer for Capital Mass Tiles */}
       <div className="tiles-layer">
         {nodesRef.current.map(node => {
-          const isFaded = activeFilter && !node.tags.some(t => t.toLowerCase().includes(activeFilter.toLowerCase())) && !node.type.toLowerCase().includes(activeFilter.toLowerCase());
+          const isFaded = activeFilter && getPrimaryCluster(node.tags) !== activeFilter;
           return (
           <CapitalTile 
             key={node.id} 
@@ -220,7 +203,7 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, isCluste
         )})}
         
         {/* Render Region Labels */}
-        {isClustered && Object.entries(clusterCenters).map(([label, coord]) => (
+        {Object.entries(CLUSTER_CENTERS).map(([label, coord]) => (
           <div 
             key={label}
             className="region-label"

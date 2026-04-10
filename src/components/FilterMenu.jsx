@@ -1,40 +1,47 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CLUSTER_CENTERS } from './DealFloor';
 
 const CATEGORIES = [
   'All',
-  'SaaS',
-  'Fintech',
-  'Consumer',
-  'Deeptech',
-  'Healthtech',
-  'Growth'
+  ...Object.keys(CLUSTER_CENTERS)
 ];
 
-export default function FilterMenu({ activeFilter, onSelectFilter }) {
+export default function FilterMenu({ activeFilter, onSelectFilter, onClose }) {
   return (
-    <motion.div 
-      className="filter-menu glass-panel"
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -20 }}
-    >
-      <div className="filter-title text-muted">TARGET SECTOR</div>
-      <div className="filter-options">
-        {CATEGORIES.map(cat => (
-          <button 
-            key={cat}
-            className={`filter-cat-btn ${activeFilter === cat || (cat === 'All' && !activeFilter) ? 'active' : ''}`}
-            onClick={() => onSelectFilter(cat === 'All' ? '' : cat)}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+    <>
+      <div className="filter-backdrop" onClick={onClose} />
+      <motion.div 
+        className="filter-menu glass-panel"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -20 }}
+      >
+        <div className="filter-title text-muted">TARGET SECTOR</div>
+        <div className="filter-options">
+          {CATEGORIES.map(cat => (
+            <button 
+              key={cat}
+              className={`filter-cat-btn ${activeFilter === cat || (cat === 'All' && !activeFilter) ? 'active' : ''}`}
+              onClick={() => {
+                onSelectFilter(cat === 'All' ? '' : cat);
+                onClose();
+              }}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
       <style>{`
+        .filter-backdrop {
+          position: fixed;
+          inset: 0;
+          z-index: 140;
+        }
+
         .filter-menu {
-          position: absolute;
+          position: fixed;
           left: 80px;
           top: 50%;
           transform: translateY(-50%);
@@ -82,6 +89,7 @@ export default function FilterMenu({ activeFilter, onSelectFilter }) {
           border-left: 2px solid var(--color-accent-green);
         }
       `}</style>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }

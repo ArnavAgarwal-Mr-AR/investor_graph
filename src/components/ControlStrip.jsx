@@ -2,7 +2,7 @@ import React from 'react';
 import { Plus, Filter, LayoutGrid, RotateCcw } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function ControlStrip({ onAdd, onFilterToggle, onToggleCluster, isClustered, onReset }) {
+export default function ControlStrip({ onAdd, onFilterToggle, onReset }) {
   return (
     <motion.div 
       className="control-strip glass-panel"
@@ -18,9 +18,6 @@ export default function ControlStrip({ onAdd, onFilterToggle, onToggleCluster, i
 
       <button className="strip-btn" title="Filter Tiles" onClick={onFilterToggle}>
         <Filter size={18} />
-      </button>
-      <button className={`strip-btn ${isClustered ? 'primary' : ''}`} title="Cluster View" onClick={onToggleCluster}>
-        <LayoutGrid size={18} />
       </button>
       <button className="strip-btn" title="Reset Surface" onClick={onReset}>
         <RotateCcw size={18} />

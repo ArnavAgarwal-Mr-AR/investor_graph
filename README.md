@@ -1,16 +1,29 @@
-# React + Vite
+# 🌐 Investor Graph: "The Deal Floor"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A tactile, physics-driven visualization interface for the Indian Venture Capital Ecosystem.
 
-Currently, two official plugins are available:
+## 🚀 Overview
+The **Deal Floor** abandons traditional, abstract graph network concepts in favor of a "living negotiation surface". Instead of plain nodes and thin lines, the system represents major venture capital firms and angels as **Capital Mass Tiles**—heavy, responsive UI cards that natively sink into a virtual 2D physics field.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+They interact organically via **Tension Bands**, which visually indicate the strength of real-world deal syndicates.
 
-## React Compiler
+## ⚡ Features
+- **Headless D3 Physics Engine:** D3 orchestrates the mathematical positioning, while React strictly handles the high-fidelity UI rendering.
+- **Framer Motion Integration:** Allows ultra-smooth interactions, dragging, and complex viewport coordinate mapping.
+- **Dynamic Minimap HUD:** Geometrically scales and tracks the active D3 zoom viewport for infinite canvas orientation.
+- **Smart "Summon" Searching:** A `⌘ K` global command bar that plucks nodes from the void and physically drops them into your immediate view.
+- **Tactical Filtering:** A control strip feature that gracefully transitions nodes into un-clickable "ghosts", focusing only on the selected industry sector.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📁 Documentation
+For detailed architecture, design, and implementation notes, see the `/docs` directory:
+- [Technical Details](./docs/technical-details.md)
+- [Database Schema](./docs/database.md)
+- [Graph Context & Vision](./docs/graph-context.md)
+- [Design Aesthetics](./docs/design.md)
+- [Component Architecture](./docs/components.md)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💻 Quick Start
+```bash
+npm install
+npm run dev
+```

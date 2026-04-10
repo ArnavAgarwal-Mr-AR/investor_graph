@@ -11,7 +11,6 @@ import { AnimatePresence } from 'framer-motion';
 function App() {
   const [selectedInvestor, setSelectedInvestor] = useState(null);
   const [isOnboarding, setIsOnboarding] = useState(false);
-  const [isClustered, setIsClustered] = useState(true);
   const [resetCounter, setResetCounter] = useState(0);
   const [summonedEntity, setSummonedEntity] = useState(null);
   const [showFilter, setShowFilter] = useState(false);
@@ -33,7 +32,6 @@ function App() {
       <DealFloor 
         onSelectInvestor={(investor) => setSelectedInvestor(investor)} 
         selectedInvestor={selectedInvestor}
-        isClustered={isClustered}
         resetCounter={resetCounter}
         summonedEntity={summonedEntity}
         activeFilter={activeFilter}
@@ -43,12 +41,10 @@ function App() {
       <ControlStrip 
         onAdd={() => setIsOnboarding(true)} 
         onFilterToggle={() => setShowFilter(!showFilter)}
-        onToggleCluster={() => setIsClustered(!isClustered)}
-        isClustered={isClustered}
         onReset={() => setResetCounter(c => c + 1)}
       />
       <AnimatePresence>
-        {showFilter && <FilterMenu activeFilter={activeFilter} onSelectFilter={setActiveFilter} />}
+        {showFilter && <FilterMenu activeFilter={activeFilter} onSelectFilter={setActiveFilter} onClose={() => setShowFilter(false)} />}
       </AnimatePresence>
 
       <TopSearch onSummon={handleSummon} />

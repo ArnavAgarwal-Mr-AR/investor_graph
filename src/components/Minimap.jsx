@@ -4,9 +4,6 @@ export default function Minimap({ nodes, viewTransform }) {
   const miniWidth = 220;
   const miniHeight = 160;
   
-  // Assuming the force graph nodes spread within roughly a 4000x4000 bounding box
-  const worldSize = 4000; 
-  
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
 
@@ -19,9 +16,25 @@ export default function Minimap({ nodes, viewTransform }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Map world coordinate to minimap coordinate
-  const mapX = (worldX) => ((worldX + worldSize / 2) / worldSize) * miniWidth;
-  const mapY = (worldY) => ((worldY + worldSize / 2) / worldSize) * miniHeight;
+  // Dynamic Bounding Box calculation so it perfectly frames all points
+  const minX = Math.min(...nodes.map(n => n.x || 0));
+  const maxX = Math.max(...nodes.map(n => n.x || 0));
+  const minY = Math.min(...nodes.map(n => n.y || 0));
+  const maxY = Math.max(...nodes.map(n => n.y || 0));
+
+  // Add structural padding and set absolute minimums to prevent jumpy scaling on init
+  const dataWidth = Math.max(maxX - minX + 800, 2000);
+  const dataHeight = Math.max(maxY - minY + 800, 1500);
+  
+  const centerX = (minX + maxX) / 2;
+  const centerY = (minY + maxY) / 2;
+
+  // Derive optimal scale to fit dimensions perfectly
+  const scale = Math.min(miniWidth / dataWidth, miniHeight / dataHeight);
+
+  // Map world coordinate to minimap coordinate using derived center offset
+  const mapX = (worldX) => miniWidth / 2 + (worldX - centerX) * scale;
+  const mapY = (worldY) => miniHeight / 2 + (worldY - centerY) * scale;
 
   // Viewport mapping (inverse of the d3 transform)
   // When zoomed out (k < 1), the viewport box is bigger on the minimap.
@@ -39,6 +52,13 @@ export default function Minimap({ nodes, viewTransform }) {
   const miniBoxY = mapY(worldTopLeftY);
   const miniBoxWidth = mapX(worldBottomRightX) - miniBoxX;
   const miniBoxHeight = mapY(worldBottomRightY) - miniBoxY;
+
+  // Clamp the green viewport box so the borders don't get clipped by 'overflow: hidden'
+  // and instead cleanly hug the inner walls of the minimap canvas when zoomed out.
+  const clampedX = Math.max(0, miniBoxX);
+  const clampedY = Math.max(0, miniBoxY);
+  const clampedWidth = Math.min(miniWidth - clampedX, (miniBoxX + miniBoxWidth) - clampedX);
+  const clampedHeight = Math.min(miniHeight - clampedY, (miniBoxY + miniBoxHeight) - clampedY);
 
   return (
     <div className="minimap-container glass-panel">
@@ -76,15 +96,17 @@ export default function Minimap({ nodes, viewTransform }) {
         })}
 
         {/* Draw the Viewport Extent Box */}
-        <div 
-          className="minimap-viewport"
-          style={{
-            left: miniBoxX,
-            top: miniBoxY,
-            width: miniBoxWidth,
-            height: miniBoxHeight
-          }}
-        />
+        {clampedWidth > 0 && clampedHeight > 0 && (
+          <div 
+            className="minimap-viewport"
+            style={{
+              left: clampedX,
+              top: clampedY,
+              width: clampedWidth,
+              height: clampedHeight
+            }}
+          />
+        )}
       </div>
 
       <style>{`
@@ -126,11 +148,12 @@ export default function Minimap({ nodes, viewTransform }) {
 
         .minimap-viewport {
           position: absolute;
-          border: 1px solid rgba(0, 255, 65, 0.6);
+          border: 1.5px solid rgba(0, 255, 65, 0.8);
           background: rgba(0, 255, 65, 0.05);
           box-shadow: 0 0 20px rgba(0, 255, 65, 0.1) inset;
           pointer-events: none;
           transform-origin: 0 0;
+          border-radius: 4px;
         }
       `}</style>
     </div>
