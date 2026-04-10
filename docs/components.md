@@ -7,12 +7,12 @@ The React components are structured carefully to keep state lifted only when nec
 2. **`CapitalTile.jsx`**: The individual interactive tile. Extends `framer-motion`'s `<motion.div>`. Manages its visual CSS scaling based on its `weight` property and triggers selection side-effects.
 
 ## Contextual Overlays (UI)
-1. **`Minimap.jsx`**: Bottom-right HUD. Performs inverse coordinate mathematical transforms against the `d3.zoom` object to correctly project the tracked bounds.
+1. **`Minimap.jsx`**: Bottom-right HUD. Performs inverse coordinate mathematical transforms against the `d3.zoom` object to correctly project the tracked bounds across the dynamic floor.
 2. **`ControlStrip.jsx`**: Floating left-navbar toggling cluster states, filter menus, and resets.
-3. **`TopSearch.jsx`**: Top-center fuzzy-match input. Reads directly from the `mockEnvironment` dataset. Offers autocomplete click-throughs or an "Enter to drop" callback (`onSummon`).
-4. **`FilterMenu.jsx`**: Nested next to the `ControlStrip`, renders an actionable modal to ghost out non-affiliated nodes. **Architecture Note:** It enforces strict 1:1 data alignment by importing `CLUSTER_CENTERS` directly from `DealFloor`, guaranteeing the filter strings precisely match the exact UI physics sectors. Features a fixed backdrop overlay for clean click-away dismissals.
-5. **`NegotiationSidebar.jsx`**: Right-hand panel revealing node details (weight balance, thesis) when a tile is selected from the DealFloor.
+3. **`TopSearch.jsx`**: Top-center fuzzy-match input. Reads from the dynamic `investors` prop provided by `App.jsx`. Offers autocomplete click-throughs or an "Enter to drop" callback (`onSummon`).
+4. **`FilterMenu.jsx`**: Nested next to the `ControlStrip`, renders an actionable modal to ghost out non-affiliated nodes. **Architecture Note:** It enforces strict 1:1 data alignment by syncing with the physics sectors defined in `DealFloor`.
+5. **`NegotiationSidebar.jsx`**: High-contrast slide-in panel. Dynamically displays **Strategic Capital Mass** (total deployed) and **Sector Alignment** (tags) using live database properties. Features a "Network Intelligence" section that generates context-aware dossiers.
 
 ## Workflows
-1. **`EntityOnboarding.jsx`**: A standalone animation sequence component explicitly crafted to mimic a data-scraping workflow. Blurs the background layout and simulates loading metrics before a successful "add".
-2. **`ErrorBoundary.jsx`**: Wraps `<DealFloor>` strictly to catch complex UI math failures or runtime `d3` issues without killing the outer React DOM, providing a crash prompt to the user.
+1. **`EntityOnboarding.jsx`**: A high-fidelity animation sequence that simulates data extraction from a provided LinkedIn URL. **Live Feature:** It successfully generates a new investor identity and performs a real-time `MERGE` write to the Neo4j Cloud, instantly populating the Deal Floor on completion.
+2. **`ErrorBoundary.jsx`**: Wraps `<DealFloor>` strictly to catch complex UI math failures or runtime `d3` issues without killing the outer React DOM. Also handles graceful UI states for Database Connection Failures.

@@ -1,10 +1,9 @@
 # 🗄️ Database Schema & Rules
 
-The environment currently relies on a localized mock dataset found in `src/data/mockEnvironment.js`.
+The environment relies on a live **Neo4j Aura Cloud** instance. 
+Configurations are managed via ecosystem-specific `.env.local` variables.
 
-The dataset outlines **50 primary Indian Venture entities**.
-
-## 1. Entities (`mockInvestors`)
+## 1. Graph Entities (`Investor` node)
 Each entity adheres to the following interface:
 - `id` (string): Unique identifier.
 - `name` (string): Key individual representing the capital mass.
@@ -13,8 +12,16 @@ Each entity adheres to the following interface:
 - `type` (enum): `elite`, `flow`, or `passive`. Drives node color accents.
 - `tags` (string[]): A list of industries. The **first tag** is parsed by the physics engine to determine which Industry Cluster the node is pulled towards.
 
-## 2. Links (`mockLinks`)
-The links represent Syndicate deal-flow.
-- `source` & `target`: Entity identifiers.
-- `strength` (number): A dynamic float. 
-   - A high strength (`0.8`) represents a deep historical syndicate. In UI, it translates to thicker, brighter SVG tension bands, and heavily overrides `d3.forceLink` distances, physically chaining entities tighter together than the standard bounds.
+## 2. Relationships
+The graph uses directional and bi-directional edges to represent deal-flow and professional history:
+
+### Types:
+- **`SYNDICATE`**: Core investment mapping. Drives the primarily visible "tension bands" on the Deal Floor. Thicker bands indicate higher `strength` values.
+- **`ALUMNI`**: Educational or prior-firm ties. Visualized as thinner, secondary links that contribute to cluster formation but have less physics "pull" than syndicates.
+- **`CAREER`**: Ties representing shared prior employment at major firms (e.g., McKinsey, Google, or local VC firms).
+
+### Properties:
+- `source` & `target`: Entity identifiers (`id`).
+- `strength` (float): Value between `0.1` and `1.0`. 
+   - High strength (`0.8`+) translates to brighter SVG tension bands and heavily overrides `d3.forceLink` distances, pulling entities physically closer in the cluster.
+- `type` (string): Lowercased relationship type used for CSS classes in `DealFloor.jsx`.

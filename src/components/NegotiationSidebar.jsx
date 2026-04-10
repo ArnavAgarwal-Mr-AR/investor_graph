@@ -14,7 +14,6 @@ export default function NegotiationSidebar({ investor, onClose }) {
           transition={{ type: 'spring', damping: 25, stiffness: 200 }}
         >
           <div className="sidebar-header">
-            <h2 className="sidebar-title">Entity Snapshot</h2>
             <button className="close-btn" onClick={onClose}>
               <X size={18} />
             </button>
@@ -28,23 +27,16 @@ export default function NegotiationSidebar({ investor, onClose }) {
                 <div className="entity-firm text-muted">{investor.firm}</div>
               </div>
             </div>
-            
             <div className="divider" />
-
+            
             <div className="section">
               <div className="section-title">
                 <Activity size={14} className="text-gold" />
-                Influence Balance
-              </div>
-              <div className="balance-scale">
-                <div 
-                  className="balance-fill" 
-                  style={{ width: `${(investor.weight / 15) * 100}%`, background: 'var(--color-accent-gold)' }} 
-                />
+                Strategic Capital
               </div>
               <div className="metric-row">
-                <span className="text-muted">Capital Weight</span>
-                <span className="mono">{investor.weight}.0x</span>
+                <span className="text-muted">Total Deployed</span>
+                <span className="mono text-gold">{investor.deployed || "Confidential"}</span>
               </div>
             </div>
 
@@ -53,24 +45,13 @@ export default function NegotiationSidebar({ investor, onClose }) {
             <div className="section">
               <div className="section-title">
                 <Link2 size={14} className="text-green" />
-                Active Deals & Tension
+                Sector Alignment
               </div>
-              <ul className="deal-list">
-                <li className="deal-item">
-                  <div className="deal-meta">
-                    <span className="deal-name">Project Quantum</span>
-                    <span className="text-muted text-small">Co-lead</span>
-                  </div>
-                  <span className="mono text-green">High</span>
-                </li>
-                <li className="deal-item">
-                  <div className="deal-meta">
-                    <span className="deal-name">AeroSpace X1</span>
-                    <span className="text-muted text-small">Syndicate</span>
-                  </div>
-                  <span className="mono text-muted">Passive</span>
-                </li>
-              </ul>
+              <div className="tag-cloud">
+                {investor.tags?.map((tag, i) => (
+                  <span key={i} className="sector-tag mono">{tag}</span>
+                ))}
+              </div>
             </div>
 
             <div className="divider" />
@@ -78,10 +59,10 @@ export default function NegotiationSidebar({ investor, onClose }) {
             <div className="section">
               <div className="section-title">
                 <BrainCircuit size={14} className="text-blue" />
-                AI Insight
+                Network Intelligence
               </div>
               <div className="insight-card">
-                "High probability co-investor with <strong>Meridian Capital</strong> based on shared deeptech thesis. Avoids early-stage consumer hardware."
+                {`Entity footprint confirmed via ${investor.firm} data nodes. Primarily active in ${investor.tags?.[0] || 'emerging'} sectors with a ${investor.type === 'elite' ? 'dominant' : 'strategic'} presence on the Deal Floor.`}
               </div>
             </div>
           </div>
@@ -103,18 +84,9 @@ export default function NegotiationSidebar({ investor, onClose }) {
 
             .sidebar-header {
               display: flex;
-              justify-content: space-between;
+              justify-content: flex-end;
               align-items: center;
-              padding: 24px;
-              border-bottom: 1px solid var(--color-border-light);
-            }
-
-            .sidebar-title {
-              font-size: 14px;
-              font-weight: 600;
-              text-transform: uppercase;
-              letter-spacing: 1px;
-              color: var(--color-text-secondary);
+              padding: 24px 24px 0;
             }
 
             .close-btn {
@@ -226,16 +198,50 @@ export default function NegotiationSidebar({ investor, onClose }) {
             }
 
             .insight-card {
-              background: rgba(74, 96, 120, 0.1);
-              border-left: 2px solid var(--color-accent-blue);
-              padding: 16px;
-              border-radius: 0 8px 8px 0;
+              position: relative;
+              background: rgba(0, 0, 0, 0.2);
+              padding: 16px 16px 16px 20px;
+              border-radius: 8px;
               font-size: 14px;
               line-height: 1.5;
               color: var(--color-text-secondary);
+              border: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .insight-card::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 12px;
+              bottom: 12px;
+              width: 3px;
+              background: var(--color-accent-blue);
+              border-radius: 0 4px 4px 0;
+              box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
             }
             .insight-card strong {
               color: var(--color-text-primary);
+            }
+
+            .tag-cloud {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 8px;
+            }
+
+            .sector-tag {
+              font-size: 10px;
+              padding: 4px 10px;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid var(--color-border-light);
+              border-radius: 4px;
+              color: var(--color-text-secondary);
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
+
+            .text-gold {
+              color: var(--color-accent-gold);
             }
           `}</style>
         </motion.div>

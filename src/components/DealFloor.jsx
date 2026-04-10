@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
-import { mockInvestors, mockLinks } from '../data/mockEnvironment';
 import CapitalTile from './CapitalTile';
 import Minimap from './Minimap';
 
@@ -24,14 +23,21 @@ export const getPrimaryCluster = (tags) => {
   return 'ENTERPRISE & SAAS'; // fallback
 };
 
-export default function DealFloor({ onSelectInvestor, selectedInvestor, resetCounter, summonedEntity, activeFilter }) {
+export default function DealFloor({ 
+  nodes, 
+  links, 
+  onSelectInvestor, 
+  selectedInvestor, 
+  resetCounter, 
+  summonedEntity, 
+  activeFilter 
+}) {
   const containerRef = useRef(null);
   const simulationRef = useRef(null);
   
-  // We keep the nodes and links in ref so D3 can mutate them, 
-  // and we trigger re-renders by updating the 'tick' state.
-  const nodesRef = useRef([...mockInvestors]);
-  const linksRef = useRef([...mockLinks]);
+  // Initialize with passed data
+  const nodesRef = useRef([...nodes]);
+  const linksRef = useRef([...links]);
   const [, setTick] = useState(0);
   const [viewTransform, setViewTransform] = useState({ x: window.innerWidth / 2, y: window.innerHeight / 2, k: 0.5 });
 
@@ -75,6 +81,16 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, resetCou
       window.removeEventListener('resize', handleResize);
     };
   }, []); // Only run once on mount
+
+  // Handle data updates from parent
+  useEffect(() => {
+    if (!simulationRef.current) return;
+    nodesRef.current = [...nodes];
+    linksRef.current = [...links];
+    simulationRef.current.nodes(nodesRef.current);
+    simulationRef.current.force('link').links(linksRef.current);
+    simulationRef.current.alpha(1).restart();
+  }, [nodes, links]);
 
   // Handle map reset
   useEffect(() => {
@@ -167,8 +183,8 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, resetCou
           
           const pathData = `M${link.source.x},${link.source.y} Q${link.source.x + dx/2},${link.source.y + dy/2 + 50} ${link.target.x},${link.target.y}`;
           
-          // Thickness based on strength
-          const strokeWidth = (link.strength * 2) + 1;
+          // Thickness based on strength, made slightly thinner for secondary links
+          const strokeWidth = link.type === 'syndicate' ? (link.strength * 2) + 1 : 1.5;
           
           // Check if either connected node is selected to make band glow
           const isHighlighted = selectedInvestor && 
@@ -178,7 +194,7 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, resetCou
             <path
               key={`link-${i}`}
               d={pathData}
-              className={`tension-band ${isHighlighted ? 'active' : ''}`}
+              className={`tension-band ${link.type} ${isHighlighted ? 'active' : ''}`}
               strokeWidth={strokeWidth}
             />
           );
@@ -256,10 +272,23 @@ export default function DealFloor({ onSelectInvestor, selectedInvestor, resetCou
           opacity: 0.4;
           transition: stroke 0.3s ease, opacity 0.3s ease;
         }
+        
+        .tension-band.alumni {
+          stroke: #8e44ad; /* Muted purple for education binds */
+          opacity: 0.3;
+          stroke-dasharray: 4 4;
+        }
+
+        .tension-band.career {
+          stroke: #2980b9; /* Muted blue for career paths */
+          opacity: 0.3;
+          stroke-dasharray: 6 2;
+        }
 
         .tension-band.active {
           stroke: var(--color-accent-green);
           opacity: 0.8;
+          stroke-dasharray: 0;
           filter: drop-shadow(0 0 8px var(--color-accent-green));
         }
 

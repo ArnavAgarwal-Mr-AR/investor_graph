@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
-import { mockInvestors } from '../data/mockEnvironment';
 
-export default function TopSearch({ onSummon }) {
+export default function TopSearch({ investors, onSummon }) {
   const [active, setActive] = useState(false);
   const [query, setQuery] = useState('');
 
@@ -17,7 +16,7 @@ export default function TopSearch({ onSummon }) {
     }
   };
 
-  const matches = query ? mockInvestors.filter(n => 
+  const matches = query ? investors.filter(n => 
     n.name.toLowerCase().includes(query.toLowerCase()) || 
     n.firm.toLowerCase().includes(query.toLowerCase())
   ).slice(0, 5) : [];

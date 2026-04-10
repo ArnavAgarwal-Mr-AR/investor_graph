@@ -33,8 +33,9 @@ Use Elastic bands / tension strips.
 
 ## 4. LAYOUT — “FREEFORM NEGOTIATION TABLE”
 This is the key innovation: **No rigid layout.**
-Tiles naturally settle depending on their relationships.
-Users can drag investors, group them manually, and create “deal clusters”.
+Tiles naturally settle depending on their relationships. 
+*   **Sector Pull**: The physics engine parses each entity's primary `sector` tag and pulls it towards its defined `CLUSTER_CENTER`. This organizes the floor into thematic zones (e.g., SaaS, Fintech, AI) while allowing relationship ties to still influence final positioning.
+*   **Manual Manipulation**: Users can drag investors, group them manually, and override the default gravity to create custom “deal clusters”.
 
 ## 5. DESIGN LANGUAGE
 **Colors:**

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Fingerprint, Check } from 'lucide-react';
 
-export default function EntityOnboarding({ onClose }) {
+export default function EntityOnboarding({ onAdd, onClose }) {
   const [phase, setPhase] = useState('input'); // input, parsing, complete
   const [url, setUrl] = useState('');
   const [log, setLog] = useState([]);
+  const [extractedData, setExtractedData] = useState(null);
 
   useEffect(() => {
     if (phase === 'parsing') {
@@ -14,6 +15,8 @@ export default function EntityOnboarding({ onClose }) {
         "Parsing identity fragments...",
         "Calculating historical deployment weight...",
         "Identifying syndicate clusters...",
+        "Fetching professional asset metadata...",
+        "Mapping LinkedIn profile imagery...",
         "Identity assembled."
       ];
       
@@ -31,9 +34,34 @@ export default function EntityOnboarding({ onClose }) {
     }
   }, [phase]);
 
+  const simulateExtraction = (url) => {
+    // Basic extraction of name from URL: linkedin.com/in/john-doe/ -> John Doe
+    const parts = url.split('/in/')[1]?.split('/')[0]?.split('-') || ['New', 'Investor'];
+    const name = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+    
+    const possibleFirms = ["Private Syndicate", "Investment Group", "Venture Partner", "Family Office", "Angel Network"];
+    const possibleTags = ["SaaS", "Fintech", "AI/ML", "Consumer", "D2C", "Deeptech"];
+    
+    return {
+      id: `i_${Date.now()}`,
+      name: name,
+      firm: possibleFirms[Math.floor(Math.random() * possibleFirms.length)],
+      image: `https://i.pravatar.cc/150?u=${name}`,
+      deployed: "Confidential",
+      tags: [possibleTags[Math.floor(Math.random() * possibleTags.length)], "Strategic"],
+      weight: 6,
+      type: "flow",
+      education: "Verified Graduate", 
+      pastExperience: "Industry Professional"
+    };
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (url) setPhase('parsing');
+    if (url) {
+      setPhase('parsing');
+      setExtractedData(simulateExtraction(url));
+    }
   };
 
   return (
@@ -104,7 +132,10 @@ export default function EntityOnboarding({ onClose }) {
               <Check size={48} className="text-gold" />
             </motion.div>
             <h2 className="title">Entity Constructed</h2>
-            <button className="submit-btn primary" onClick={onClose} style={{ marginTop: '24px' }}>
+            <div className="extracted-preview mono text-muted" style={{ fontSize: '12px', marginBottom: '16px' }}>
+              Identified: <span className="text-green">{extractedData?.name}</span> @ {extractedData?.firm}
+            </div>
+            <button className="submit-btn primary" onClick={() => onAdd(extractedData)} style={{ marginTop: '8px' }}>
               Drop onto Deal Floor
             </button>
           </div>
@@ -216,7 +247,7 @@ export default function EntityOnboarding({ onClose }) {
           background: rgba(0, 0, 0, 0.5);
           padding: 16px;
           border-radius: 8px;
-          min-height: 180px;
+          min-height: 220px;
           font-size: 13px;
           color: var(--color-text-secondary);
           display: flex;
