@@ -21,8 +21,26 @@ export default function EntityOnboarding({ onAdd, onClose }) {
       ];
       
       let i = 0;
-      const interval = setInterval(() => {
+      const interval = setInterval(async () => {
         setLog(prev => [...prev, logs[i]]);
+        
+        // When we reach the mirroring step, trigger the API
+        if (logs[i].includes("Mapping LinkedIn profile")) {
+          try {
+            const response = await fetch('/api/mirror-asset', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ sourceUrl: extractedData.image })
+            });
+            const result = await response.json();
+            if (result.objectKey) {
+              setExtractedData(prev => ({ ...prev, image: result.objectKey }));
+            }
+          } catch (err) {
+            console.error("Mirror flight failed, using fallback.");
+          }
+        }
+
         i++;
         if (i === logs.length) {
           clearInterval(interval);

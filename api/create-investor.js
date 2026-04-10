@@ -1,3 +1,4 @@
+// api/create-investor.js
 import neo4j from 'neo4j-driver';
 
 const driver = neo4j.driver(
@@ -6,27 +7,32 @@ const driver = neo4j.driver(
 );
 
 export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
+    if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
     const investor = req.body;
+    const storageBase = process.env.STORAGE_BASE_URL || "";
     const session = driver.session();
+
+    // Ensure the image URL is properly resolved before saving to the DB
+    const finalImageUrl = investor.image.startsWith('http')
+        ? investor.image
+        : `${storageBase}${investor.image}`;
 
     try {
         await session.run(
             `MERGE (i:Investor {id: $id})
-       SET i.name = $name,
-           i.firm = $firm,
-           i.image = $image,
-           i.deployed = $deployed,
-           i.tags = $tags,
-           i.weight = $weight,
-           i.type = $type,
-           i.education = $education,
-           i.pastExperience = $pastExperience`,
+             SET i.name = $name,
+                 i.firm = $firm,
+                 i.image = $image,
+                 i.deployed = $deployed,
+                 i.tags = $tags,
+                 i.weight = $weight,
+                 i.type = $type,
+                 i.education = $education,
+                 i.pastExperience = $pastExperience`,
             {
                 ...investor,
+                image: finalImageUrl, // Use the resolved B2 or external URL
                 weight: neo4j.int(investor.weight)
             }
         );

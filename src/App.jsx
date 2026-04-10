@@ -39,12 +39,21 @@ function App() {
   }, []);
 
   const handleAddInvestor = async (investor) => {
-    const success = await createInvestor(investor);
-    if (success) {
-      setIsOnboarding(false);
-      await loadData(); // Refresh floor
-    } else {
-      alert("Failed to synchronize with Neo4j Cloud.");
+    setIsOnboarding(false);
+    try {
+      const response = await fetch('/api/create-investor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(investor),
+      });
+
+      if (response.ok) {
+        await loadData(); // Refresh floor
+      } else {
+        alert("Proxy handshake failed.");
+      }
+    } catch (error) {
+      alert("Connection to Security Proxy lost.");
     }
   };
 
@@ -57,8 +66,8 @@ function App() {
   if (data.loading) {
     return (
       <div className="app-loading">
-        <motion.div 
-          initial={{ opacity: 0 }} 
+        <motion.div
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="loading-content"
         >
@@ -104,15 +113,15 @@ function App() {
   if (data.error) {
     return (
       <div className="app-error">
-        <motion.div 
-          initial={{ scale: 0.9, opacity: 0 }} 
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           className="error-content glass-panel"
         >
           <AlertTriangle size={48} className="text-gold" />
           <h2 className="error-title mono">SYNC ERROR</h2>
           <p className="error-desc text-muted">
-            {data.error === "CONNECTION_FAILED" 
+            {data.error === "CONNECTION_FAILED"
               ? "Unable to establish communication with Neo4j Aura Cloud. Verify VITE_NEO4J credentials in .env.local."
               : "The Negotiation Floor is currently empty. Direct Seed operation required."
             }
@@ -162,41 +171,41 @@ function App() {
   return (
     <ErrorBoundary>
       <div className="app-container">
-      <DealFloor 
-        nodes={data.nodes}
-        links={data.links}
-        onSelectInvestor={(investor) => setSelectedInvestor(investor)} 
-        selectedInvestor={selectedInvestor}
-        resetCounter={resetCounter}
-        summonedEntity={summonedEntity}
-        activeFilter={activeFilter}
-      />
+        <DealFloor
+          nodes={data.nodes}
+          links={data.links}
+          onSelectInvestor={(investor) => setSelectedInvestor(investor)}
+          selectedInvestor={selectedInvestor}
+          resetCounter={resetCounter}
+          summonedEntity={summonedEntity}
+          activeFilter={activeFilter}
+        />
 
-      {/* Floating Overlays */}
-      <ControlStrip 
-        onAdd={() => setIsOnboarding(true)} 
-        onFilterToggle={() => setShowFilter(!showFilter)}
-        onReset={() => setResetCounter(c => c + 1)}
-      />
-      <AnimatePresence>
-        {showFilter && <FilterMenu activeFilter={activeFilter} onSelectFilter={setActiveFilter} onClose={() => setShowFilter(false)} />}
-      </AnimatePresence>
+        {/* Floating Overlays */}
+        <ControlStrip
+          onAdd={() => setIsOnboarding(true)}
+          onFilterToggle={() => setShowFilter(!showFilter)}
+          onReset={() => setResetCounter(c => c + 1)}
+        />
+        <AnimatePresence>
+          {showFilter && <FilterMenu activeFilter={activeFilter} onSelectFilter={setActiveFilter} onClose={() => setShowFilter(false)} />}
+        </AnimatePresence>
 
-      <TopSearch investors={data.nodes} onSummon={handleSummon} />
-      
-      {/* Right side slide-in panel */}
-      <NegotiationSidebar 
-        investor={selectedInvestor} 
-        onClose={() => setSelectedInvestor(null)} 
-      />
+        <TopSearch investors={data.nodes} onSummon={handleSummon} />
 
-      {/* Fullscreen blocking overlay for LinkedIn add flow */}
-      {isOnboarding && (
-        <EntityOnboarding onAdd={handleAddInvestor} onClose={() => setIsOnboarding(false)} />
-      )}
+        {/* Right side slide-in panel */}
+        <NegotiationSidebar
+          investor={selectedInvestor}
+          onClose={() => setSelectedInvestor(null)}
+        />
 
-      {/* Generic styling to make overlay items absolutely positioned */}
-      <style>{`
+        {/* Fullscreen blocking overlay for LinkedIn add flow */}
+        {isOnboarding && (
+          <EntityOnboarding onAdd={handleAddInvestor} onClose={() => setIsOnboarding(false)} />
+        )}
+
+        {/* Generic styling to make overlay items absolutely positioned */}
+        <style>{`
         .app-container {
           position: relative;
           width: 100vw;

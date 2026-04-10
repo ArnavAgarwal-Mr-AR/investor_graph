@@ -54,10 +54,14 @@ export default async function handler(req, res) {
 ## 2. Configuration on Vercel
 1.  Push your code to GitHub and connect it to Vercel.
 2.  In **Vercel Project Settings > Environment Variables**, add:
-    - `NEO4J_URI`
-    - `NEO4J_USER`
-    - `NEO4J_PASSWORD`
-3.  **IMPORTANT**: Remove these `VITE_` variables from your local `.env.production` before building, so they never reach the client bundle.
+    - `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD`
+    - `B2_KEY_ID` (Backblaze Key ID)
+    - `B2_APP_KEY` (Backblaze Application Key)
+    - `B2_ENDPOINT` (e.g., `https://s3.us-west-004.backblazeb2.com`)
+    - `B2_BUCKET_NAME` (Your B2 Bucket name)
+    - `STORAGE_BASE_URL` (Use `/api/get-image?key=` for private buckets)
+3.  **PRIVATE BUCKET NOTE**: Since your bucket is private, your `STORAGE_BASE_URL` must point to your serverless proxy. This ensures your keys stay safe and images load securely.
+4.  **IMPORTANT**: Remove these `VITE_` variables from your local `.env.production` before building, so they never reach the client bundle.
 
 ## 3. Frontend Update
 Update your `handleAddInvestor` in `App.jsx` to hit your new serverless endpoint:
