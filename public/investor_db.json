@@ -1,0 +1,210 @@
+{
+  "nodes": [
+    { 
+      "id": "peakxv", "name": "Peak XV Partners", "short": "Peak XV", "type": "vc", "city": "Bengaluru", "founded": 2006, "aum": "$9.2B", "stage": "Seed→Growth", 
+      "sectors": ["SaaS", "AI", "Fintech", "Consumer", "Healthtech"], 
+      "leads": ["Shailendra Singh", "Rajan Anandan", "Mohit Bhatnagar", "GV Ravishankar"],
+      "education": [
+        { "person": "Rajan Anandan", "institute": "MIT", "degree": "BSc EE", "year": 1989 },
+        { "person": "Rajan Anandan", "institute": "Stanford", "degree": "MSc Manufacturing", "year": 1991 },
+        { "person": "Shailendra Singh", "institute": "IIM Ahmedabad", "degree": "MBA", "year": 1999 },
+        { "person": "Mohit Bhatnagar", "institute": "IIT Delhi", "degree": "BTech", "year": 1995 }
+      ],
+      "past_roles": ["Google", "Microsoft", "McKinsey", "Lintas"]
+    },
+    { 
+      "id": "accel", "name": "Accel India", "short": "Accel", "type": "vc", "city": "Bengaluru", "founded": 2008, "aum": "$1.6B+", "stage": "Early Stage", 
+      "leads": ["Prashanth Prakash", "Anand Daniel", "Subrata Mitra", "Shekhar Kirani"],
+      "education": [
+        { "person": "Anand Daniel", "institute": "MIT Sloan", "degree": "MBA", "year": 2005 },
+        { "person": "Prashanth Prakash", "institute": "Bangalore University", "degree": "BTech", "year": 1986 }
+      ],
+      "past_roles": ["Intel", "Oracle"]
+    },
+    { 
+      "id": "nexus", "name": "Nexus Venture Partners", "short": "Nexus VP", "type": "vc", "city": "Bengaluru/Menlo Park", "founded": 2006, "aum": "$2B+", 
+      "leads": ["Sameer Brij Verma", "Jishnu Bhattacharjee", "Anand Chandrasekaran"],
+      "education": [
+        { "person": "Sameer Brij Verma", "institute": "IIT Bombay", "degree": "BTech", "year": 2004 },
+        { "person": "Jishnu Bhattacharjee", "institute": "Stanford GSB", "degree": "MBA", "year": 2002 }
+      ],
+      "past_roles": ["Reliance", "Oracle", "Saba Software"]
+    },
+    { 
+      "id": "lightspeed", "name": "Lightspeed India", "short": "Lightspeed", "type": "vc", "city": "Delhi/Bengaluru", "founded": 2008, 
+      "leads": ["Bejul Somaia", "Hemant Mohapatra", "Vaibhav Agrawal", "Harsha Kumar"],
+      "education": [
+        { "person": "Bejul Somaia", "institute": "London School of Economics", "degree": "BSc", "year": 1993 },
+        { "person": "Bejul Somaia", "institute": "Stanford GSB", "degree": "MBA", "year": 1997 },
+        { "person": "Hemant Mohapatra", "institute": "Stanford", "degree": "MS CS", "year": 2007 }
+      ],
+      "past_roles": ["Google", "Andreessen Horowitz", "Goldman Sachs"]
+    },
+    { 
+      "id": "blume", "name": "Blume Ventures", "short": "Blume", "type": "vc", "city": "Mumbai/Bengaluru", "founded": 2011, "aum": "$900M",
+      "leads": ["Karthik Reddy", "Sanjay Nath", "Arpit Agarwal", "Sajith Pai"],
+      "education": [
+        { "person": "Karthik Reddy", "institute": "IIM Bangalore", "degree": "MBA", "year": 1998 },
+        { "person": "Karthik Reddy", "institute": "IIT Roorkee", "degree": "BTech", "year": 1996 },
+        { "person": "Sanjay Nath", "institute": "UCLA Anderson", "degree": "MBA", "year": 2000 },
+        { "person": "Sanjay Nath", "institute": "BITS Pilani", "degree": "BTech", "year": 1994 }
+      ],
+      "past_roles": ["American Express", "McKinsey"]
+    },
+    { 
+      "id": "elevation", "name": "Elevation Capital", "short": "Elevation", "type": "vc", "city": "Delhi/Bengaluru", "founded": 2002, "aum": "$2B+", 
+      "leads": ["Ravi Adusumalli", "Mridul Arora", "Mayank Khanduja"],
+      "education": [
+        { "person": "Mridul Arora", "institute": "IIM Ahmedabad", "degree": "MBA", "year": 2007 },
+        { "person": "Mayank Khanduja", "institute": "IIM Calcutta", "degree": "MBA", "year": 2006 }
+      ],
+      "past_roles": ["McKinsey", "Ivory Capital"]
+    },
+    { 
+      "id": "3one4", "name": "3one4 Capital", "short": "3one4", "type": "vc", "city": "Bengaluru", "founded": 2016, 
+      "leads": ["Pranav Pai", "Siddarth Pai"],
+      "education": [
+        { "person": "Pranav Pai", "institute": "Stanford", "degree": "MSc Engineering", "year": 2013 },
+        { "person": "Siddarth Pai", "institute": "Purdue University", "degree": "BSc", "year": 2015 }
+      ],
+      "past_roles": ["Intel"]
+    },
+    { 
+      "id": "kalaari", "name": "Kalaari Capital", "short": "Kalaari", "type": "vc", "city": "Bengaluru", "founded": 2006,
+      "leads": ["Vani Kola", "Sumit Jain"],
+      "education": [
+        { "person": "Vani Kola", "institute": "Arizona State University", "degree": "MSc EE", "year": 1987 }
+      ],
+      "past_roles": ["RightNow", "Certus"]
+    },
+    { 
+      "id": "omnivore", "name": "Omnivore", "short": "Omnivore", "type": "vc", "city": "Mumbai/Delhi", "founded": 2010,
+      "leads": ["Mark Kahn", "Jinesh Shah"],
+      "education": [
+        { "person": "Mark Kahn", "institute": "Harvard Business School", "degree": "MBA", "year": 2006 }
+      ],
+      "past_roles": ["Godrej Agrovet"]
+    },
+    { 
+      "id": "fireworks", "name": "Fireside Ventures", "short": "Fireside", "type": "vc", "city": "Bengaluru", "founded": 2017,
+      "leads": ["Kanwaljit Singh", "Kannan Sitaram"],
+      "education": [
+        { "person": "Kanwaljit Singh", "institute": "IIM Ahmedabad", "degree": "MBA", "year": 1987 }
+      ],
+      "past_roles": ["Intel Capital", "Helion Ventures"]
+    },
+    { 
+      "id": "arkam", "name": "Arkam Ventures", "short": "Arkam", "type": "vc", "city": "Bengaluru", "founded": 2021,
+      "leads": ["Rahul Chandra", "Bala Srinivasa"],
+      "education": [
+        { "person": "Rahul Chandra", "institute": "UC Berkeley Haas", "degree": "MBA", "year": 1999 }
+      ],
+      "past_roles": ["Helion Ventures", "LGT Lightstone"]
+    },
+    { 
+      "id": "titancapital", "name": "Titan Capital", "short": "Titan", "type": "angel", "city": "Gurugram", "founded": 2015,
+      "leads": ["Kunal Bahl", "Rohit Bansal"],
+      "education": [
+        { "person": "Kunal Bahl", "institute": "Wharton, UPenn", "degree": "BSc", "year": 2006 },
+        { "person": "Rohit Bansal", "institute": "IIT Delhi", "degree": "BTech", "year": 2005 }
+      ],
+      "past_roles": ["Snapdeal"]
+    },
+    { 
+      "id": "kunalshah", "name": "Kunal Shah", "short": "K. Shah", "type": "angel", "city": "Mumbai",
+      "education": [
+        { "institute": "Wilson College", "degree": "Philosophy", "year": 2003 }
+      ],
+      "past_roles": ["FreeCharge", "CRED"]
+    },
+    { 
+      "id": "anupammittal", "name": "Anupam Mittal", "short": "A. Mittal", "type": "angel", "city": "Mumbai",
+      "education": [
+        { "institute": "Boston College", "degree": "MBA", "year": 1997 }
+      ],
+      "past_roles": ["Shaadi.com"]
+    },
+    { 
+      "id": "sanjeevbik", "name": "Sanjeev Bikhchandani", "short": "S. Bikhchandani", "type": "angel", "city": "Delhi",
+      "education": [
+        { "institute": "IIM Ahmedabad", "degree": "MBA", "year": 1989 },
+        { "institute": "St. Stephen's", "degree": "Economics", "year": 1987 }
+      ],
+      "past_roles": ["Naukri.com", "Info Edge"]
+    },
+    { 
+      "id": "vijayshekhar", "name": "Vijay Shekhar Sharma", "short": "VSS", "type": "angel", "city": "Delhi",
+      "education": [
+        { "institute": "Delhi College of Engineering", "degree": "BTech", "year": 1998 }
+      ],
+      "past_roles": ["Paytm"]
+    },
+    { 
+      "id": "deepinder", "name": "Deepinder Goyal", "short": "D. Goyal", "type": "angel", "city": "Gurugram",
+      "education": [
+        { "institute": "IIT Delhi", "degree": "BTech", "year": 2005 }
+      ],
+      "past_roles": ["Zomato", "Bain & Co"]
+    },
+    { 
+      "id": "krisg", "name": "Kris Gopalakrishnan", "short": "Kris G.", "type": "angel", "city": "Bengaluru",
+      "education": [
+        { "institute": "IIT Madras", "degree": "MSc Physics", "year": 1977 }
+      ],
+      "past_roles": ["Infosys"]
+    },
+    { 
+      "id": "mohandaspai", "name": "Mohandas Pai", "short": "M. Pai", "type": "angel", "city": "Bengaluru",
+      "education": [
+        { "institute": "St. Joseph's Bangalore", "degree": "BCom", "year": 1979 }
+      ],
+      "past_roles": ["Infosys", "Manipal"]
+    },
+    { 
+      "id": "binnyb", "name": "Binny Bansal", "short": "B. Bansal", "type": "angel", "city": "Bengaluru",
+      "education": [
+        { "institute": "IIT Delhi", "degree": "BTech", "year": 2005 }
+      ],
+      "past_roles": ["Flipkart", "Amazon"]
+    },
+    { 
+      "id": "sachinb", "name": "Sachin Bansal", "short": "S. Bansal", "type": "angel", "city": "Bengaluru",
+      "education": [
+        { "institute": "IIT Delhi", "degree": "BTech", "year": 2005 }
+      ],
+      "past_roles": ["Flipkart", "Navi", "Amazon"]
+    },
+    { 
+      "id": "lvx", "name": "LetsVenture (LVX)", "short": "LVX", "type": "network", "city": "Bengaluru",
+      "leads": ["Shanti Mohan", "Sanjay Jha"]
+    },
+    { 
+      "id": "mumbaiangels", "name": "Mumbai Angels", "short": "M. Angels", "type": "network", "city": "Mumbai",
+      "leads": ["Nandini Mansinghka"]
+    },
+    { 
+      "id": "vcatalysts", "name": "Venture Catalysts", "short": "V-Catalysts", "type": "network", "city": "Mumbai",
+      "leads": ["Apoorva Ranjan Sharma", "Anuj Golecha", "Anil Jain"]
+    }
+  ],
+  "links": [
+    { "source": "peakxv", "target": "accel", "rel": "Co-invested in Swiggy, Ola", "type": "coinvest" },
+    { "source": "peakxv", "target": "lightspeed", "rel": "Co-invested in OYO", "type": "coinvest" },
+    { "source": "peakxv", "target": "elevation", "rel": "Co-invested in Meesho", "type": "coinvest" },
+    { "source": "accel", "target": "elevation", "rel": "Co-invested in Swiggy", "type": "coinvest" },
+    { "source": "nexus", "target": "peakxv", "rel": "Co-invested in Unacademy", "type": "coinvest" },
+    { "source": "3one4", "target": "accel", "rel": "Co-invested in Darwinbox", "type": "coinvest" },
+    { "source": "titancapital", "target": "accel", "rel": "Co-invested in Razorpay", "type": "coinvest" },
+    { "source": "sanjeevbik", "target": "peakxv", "rel": "Shared Alumni: IIM Ahmedabad", "type": "alumni" },
+    { "source": "deepinder", "target": "titancapital", "rel": "Shared Alumni: IIT Delhi (Bansals & Goyal)", "type": "alumni" },
+    { "source": "binnyb", "target": "sachinb", "rel": "Flipkart Co-founders", "type": "career" },
+    { "source": "binnyb", "target": "deepinder", "rel": "Shared Alumni: IIT Delhi", "type": "alumni" },
+    { "source": "sachinb", "target": "titancapital", "rel": "Shared Alumni: IIT Delhi", "type": "alumni" },
+    { "source": "krisg", "target": "mohandaspai", "rel": "Ex-Infosys Leadership", "type": "career" },
+    { "source": "fireworks", "target": "arkam", "rel": "Ecosystem Peers (Ex-Helion Partners)", "type": "career" },
+    { "source": "peakxv", "target": "3one4", "rel": "Shared Alumni: Stanford (Rajan & Pranav)", "type": "alumni" },
+    { "source": "lightspeed", "target": "nexus", "rel": "Co-invested in multiple SaaS rounds", "type": "coinvest" },
+    { "source": "kalaari", "target": "blume", "rel": "Co-invested in Cashfree, Ultrahuman", "type": "coinvest" },
+    { "source": "kunalshah", "target": "peakxv", "rel": "Peak XV invested in CRED", "type": "network" }
+  ]
+}

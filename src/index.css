@@ -1,0 +1,71 @@
+:root {
+  /* Colors */
+  --color-bg-base: #060608; /* Extremely dark, barely warm matte black */
+  --color-bg-surface: #121216; /* Slightly elevated surface */
+  --color-bg-elevated: #1c1c21; /* High elevation surface */
+  --color-accent-green: #00FF41; /* Electric capital flow green */
+  --color-accent-gold: #D4AF37; /* Very soft gold for elite indicators */
+  --color-accent-blue: #4A6078; /* Muted blue for passive objects */
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #8E929C;
+  --color-text-muted: #545761;
+  --color-border: #2A2A35;
+  --color-border-light: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --font-family-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'JetBrains Mono', monospace;
+  
+  /* Shadows representing "Capital Weight" */
+  --shadow-light-weight: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-medium-weight: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --shadow-heavy-weight: 0 16px 40px rgba(0, 0, 0, 0.8), inset 0 2px 0 rgba(255, 255, 255, 0.15);
+  --shadow-glow-green: 0 0 20px rgba(0, 255, 65, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+/* Utilities */
+.mono {
+  font-family: var(--font-family-mono);
+}
+
+.text-green {
+  color: var(--color-accent-green);
+}
+
+.text-gold {
+  color: var(--color-accent-gold);
+}
+
+.text-muted {
+  color: var(--color-text-secondary);
+}
+
+/* Glassmorphism utilities */
+.glass-panel {
+  background: rgba(18, 18, 22, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border-light);
+}
