@@ -122,7 +122,7 @@ function App() {
           <h2 className="error-title mono">SYNC ERROR</h2>
           <p className="error-desc text-muted">
             {data.error === "CONNECTION_FAILED"
-              ? "Unable to establish communication with Neo4j Aura Cloud. Verify VITE_NEO4J credentials in .env.local."
+              ? "Unable to establish communication with Neo4j Aura Cloud via the Secure Node Proxy."
               : "The Negotiation Floor is currently empty. Direct Seed operation required."
             }
           </p>
