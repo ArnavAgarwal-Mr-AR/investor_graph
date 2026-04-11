@@ -15,7 +15,7 @@ This manifest serves as the "Source of Truth" for all semantic identifiers, data
 | `deployed` | `string` | Human-readable capital deployed. | `$100M+`, `$2.5B` |
 | `education` | `string` | University background (backstage mapping). | Text |
 | `pastExperience`| `string` | Career history (backstage mapping). | Text |
-
+| `firmLogo` | `string` | URL to automatically fetched logo. | `https://logo.clearbit.com/...` |
 ---
 
 ## 2. Relationship Registry
@@ -36,6 +36,7 @@ These IDs and Classes are consistently used for automated event triggers and DOM
 - **Selection Event**: `.capital-tile.selected`
 - **Sidebar Portal**: `.negotiation-sidebar`
 - **Onboarding Trigger**: `[data-action="onboard-entity"]`
+- **Manual Upload**: `.file-upload-section` (Triggered during construct phase)
 
 ---
 

@@ -22,9 +22,14 @@ export default function NegotiationSidebar({ investor, onClose }) {
           <div className="sidebar-content">
             <div className="entity-hero">
               <img src={investor.image} alt={investor.name} className="hero-avatar" />
-              <div>
+              <div className="entity-info">
                 <div className="entity-name">{investor.name}</div>
-                <div className="entity-firm text-muted">{investor.firm}</div>
+                <div className="firm-row">
+                  {investor.firmLogo && (
+                    <img src={investor.firmLogo} alt="" className="firm-mini-logo" />
+                  )}
+                  <div className="entity-firm text-muted">{investor.firm}</div>
+                </div>
               </div>
             </div>
             <div className="divider" />
@@ -126,6 +131,20 @@ export default function NegotiationSidebar({ investor, onClose }) {
               font-size: 24px;
               font-weight: 600;
               letter-spacing: -0.5px;
+            }
+
+            .firm-row {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-top: 4px;
+            }
+
+            .firm-mini-logo {
+              width: 16px;
+              height: 16px;
+              border-radius: 4px;
+              filter: grayscale(0.2);
             }
 
             .divider {

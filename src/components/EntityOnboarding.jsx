@@ -13,10 +13,10 @@ export default function EntityOnboarding({ onAdd, onClose }) {
       const logs = [
         "Establishing SEC EDGAR connection...",
         "Parsing identity fragments...",
-        "Calculating historical deployment weight...",
+        "Calculated historical deployment weight...",
         "Identifying syndicate clusters...",
-        "Fetching professional asset metadata...",
-        "Mapping LinkedIn profile imagery...",
+        "Fetching Firm Logo via Neural Search...",
+        "Awaiting Manual Dossier Upload...",
         "Identity assembled."
       ];
       
@@ -52,33 +52,78 @@ export default function EntityOnboarding({ onAdd, onClose }) {
     }
   }, [phase]);
 
-  const simulateExtraction = (url) => {
-    // Basic extraction of name from URL: linkedin.com/in/john-doe/ -> John Doe
-    const parts = url.split('/in/')[1]?.split('/')[0]?.split('-') || ['New', 'Investor'];
-    const name = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
-    
-    const possibleFirms = ["Private Syndicate", "Investment Group", "Venture Partner", "Family Office", "Angel Network"];
-    const possibleTags = ["SaaS", "Fintech", "AI/ML", "Consumer", "D2C", "Deeptech"];
-    
-    return {
-      id: `i_${Date.now()}`,
-      name: name,
-      firm: possibleFirms[Math.floor(Math.random() * possibleFirms.length)],
-      image: `https://i.pravatar.cc/150?u=${name}`,
-      deployed: "Confidential",
-      tags: [possibleTags[Math.floor(Math.random() * possibleTags.length)], "Strategic"],
-      weight: 6,
-      type: "flow",
-      education: "Verified Graduate", 
-      pastExperience: "Industry Professional"
-    };
-  };
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [firmLogo, setFirmLogo] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (url) {
       setPhase('parsing');
-      setExtractedData(simulateExtraction(url));
+      
+      const parts = url.split('/in/')[1]?.split('/')[0]?.split('-') || ['New', 'Investor'];
+      const name = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
+      const firm = ["Private Syndicate", "Investment Group", "Venture Partner", "Family Office", "Angel Network"][Math.floor(Math.random() * 5)];
+      
+      // Auto-fetch firm logo (simulation of brandfetch/clearbit)
+      const domain = firm.toLowerCase().replace(/\s+/g, '') + '.com';
+      const logoUrl = `https://logo.clearbit.com/${domain}?size=100`;
+      setFirmLogo(logoUrl);
+
+      setExtractedData({
+        id: `i_${Date.now()}`,
+        name: name,
+        firm: firm,
+        image: `https://i.pravatar.cc/150?u=${name}`, // Initial placeholder
+        deployed: "Confidential",
+        tags: ["Strategic"],
+        weight: 6,
+        type: "flow",
+        education: "Verified Graduate", 
+        pastExperience: "Industry Professional"
+      });
+    }
+  };
+
+  const handleFileUpload = async () => {
+    if (!extractedData) return;
+
+    try {
+      let finalImage = extractedData.image;
+
+      if (selectedFile) {
+        // 1. Get Pre-signed URL
+        const response = await fetch('/api/get-upload-url', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fileName: selectedFile.name,
+            contentType: selectedFile.type
+          })
+        });
+        
+        const { uploadUrl, objectKey } = await response.json();
+
+        // 2. Upload directly to B2
+        await fetch(uploadUrl, {
+          method: 'PUT',
+          headers: { 'Content-Type': selectedFile.type },
+          body: selectedFile
+        });
+        
+        finalImage = objectKey;
+      }
+
+      // 3. Finalize local data
+      const finalizedData = {
+        ...extractedData,
+        image: finalImage,
+        firmLogo: firmLogo // Include the auto-logo
+      };
+      
+      onAdd(finalizedData);
+    } catch (err) {
+      console.error("Upload failure:", err);
+      onAdd(extractedData); // Fallback to placeholder
     }
   };
 
@@ -150,11 +195,28 @@ export default function EntityOnboarding({ onAdd, onClose }) {
               <Check size={48} className="text-gold" />
             </motion.div>
             <h2 className="title">Entity Constructed</h2>
-            <div className="extracted-preview mono text-muted" style={{ fontSize: '12px', marginBottom: '16px' }}>
+            <div className="extracted-preview mono text-muted" style={{ fontSize: '12px', marginBottom: '24px' }}>
               Identified: <span className="text-green">{extractedData?.name}</span> @ {extractedData?.firm}
             </div>
-            <button className="submit-btn primary" onClick={() => onAdd(extractedData)} style={{ marginTop: '8px' }}>
-              Drop onto Deal Floor
+
+            <div className="file-upload-section">
+              <label className="file-label mono">
+                <input 
+                  type="file" 
+                  accept="image/*" 
+                  onChange={(e) => setSelectedFile(e.target.files[0])}
+                  style={{ display: 'none' }}
+                />
+                {selectedFile ? `[ ${selectedFile.name} ]` : "Select Dossier Image..."}
+              </label>
+            </div>
+
+            <button 
+              className="submit-btn primary" 
+              onClick={handleFileUpload} 
+              style={{ marginTop: '24px' }}
+            >
+              {selectedFile ? "Upload & Drop onto Floor" : "Drop with Placeholder"}
             </button>
           </div>
         )}
@@ -275,6 +337,26 @@ export default function EntityOnboarding({ onAdd, onClose }) {
 
         .log-line {
           color: var(--color-accent-green);
+        }
+
+        .file-upload-section {
+          width: 100%;
+          padding: 20px;
+          border: 1px dashed var(--color-border-light);
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.02);
+          transition: all 0.2s;
+        }
+
+        .file-upload-section:hover {
+          background: rgba(255, 255, 255, 0.05);
+          border-color: var(--color-accent-gold);
+        }
+
+        .file-label {
+          cursor: pointer;
+          font-size: 13px;
+          color: var(--color-text-secondary);
         }
       `}</style>
     </motion.div>

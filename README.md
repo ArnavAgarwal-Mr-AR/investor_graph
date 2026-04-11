@@ -21,6 +21,13 @@ For detailed architecture, design, and implementation notes, see the `/docs` dir
 - [Graph Context & Vision](./docs/graph-context.md)
 - [Design Aesthetics](./docs/design.md)
 - [Component Architecture](./docs/components.md)
+- [Security Proxy Guide](./docs/SECURITY_PROXY.md)
+
+## 🗃️ Data Operations
+To manage the live cloud graph data, use the built-in maintenance scripts:
+- **Export Database to JSON:** `node scripts/export-investors.js`
+- **Sync JSON to Database:** `node scripts/import-investors.js`
+- See [Database Operations Docs](./docs/database.md#3-maintenance--data-operations) for full details.
 
 ## 💻 Quick Start
 ```bash

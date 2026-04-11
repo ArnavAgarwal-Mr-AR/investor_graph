@@ -17,7 +17,20 @@ We use `framer-motion`'s `<motion.div drag />`.
 When the user drags, we intercept the mathematical delta using `onDrag(node, info)`. 
 We instantly add `info.delta.x` to the node's strict `node.fx` (fixed X coordinate). D3 sees the fixed coordinate move and ripples the tension across all related nodes naturally, keeping dragging completely physics-compliant.
 
-## Force Engine Adjustments
-The physics engine replaces standard Central Gravity with **Clustered Coordinate Gravity**.
-- `forceManyBody()` is used to push nodes apart.
 - `d3.forceX(d => cluster[...].x)` and `forceY` are mapped to dynamically calculated focal points depending on the entity's primary industry.
+
+## 🌉 The Full-Stack Data Bridge
+The application transitions from a "client-only" tool to a secured full-stack ecosystem using a **Security Proxy Pattern**.
+
+### 1. Security Proxy (Vercel)
+To prevent Neo4j Cloud credentials from being exposed in the browser, all write operations (e.g., creating a new investor) are routed through `/api/create-investor.js`. This serverless function validates the input and executes the `MERGE` query on behalf of the user using protected environment variables.
+
+### 2. Secure Image Proxy (B2 Bridge)
+The application handles media via a private Backblaze B2 bucket. 
+- **Privacy**: The bucket is 100% private and inaccessible via standard URLs.
+- **Service**: `/api/get-image.js` acts as an authenticated streamer. It fetches the private object and streams it to the frontend with optimized cache headers (`public, max-age=86400`), ensuring both security and performance for the Deal Floor.
+
+### 3. Direct-to-Storage Handshake
+During manual investor uploads, the frontend performs a two-step handshake:
+1. Requests a **Pre-signed S3 URL** from `/api/get-upload-url.js`.
+2. Uploads the file directly to B2 via this temporary URL, keeping potentially large file streams off the serverless function's memory.
