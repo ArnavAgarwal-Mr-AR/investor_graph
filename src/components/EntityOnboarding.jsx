@@ -53,7 +53,6 @@ export default function EntityOnboarding({ onAdd, onClose }) {
   }, [phase]);
 
   const [selectedFile, setSelectedFile] = useState(null);
-  const [firmLogo, setFirmLogo] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,11 +62,6 @@ export default function EntityOnboarding({ onAdd, onClose }) {
       const parts = url.split('/in/')[1]?.split('/')[0]?.split('-') || ['New', 'Investor'];
       const name = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
       const firm = ["Private Syndicate", "Investment Group", "Venture Partner", "Family Office", "Angel Network"][Math.floor(Math.random() * 5)];
-      
-      // Auto-fetch firm logo (simulation of brandfetch/clearbit)
-      const domain = firm.toLowerCase().replace(/\s+/g, '') + '.com';
-      const logoUrl = `https://logo.clearbit.com/${domain}?size=100`;
-      setFirmLogo(logoUrl);
 
       setExtractedData({
         id: `i_${Date.now()}`,
@@ -116,8 +110,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
       // 3. Finalize local data
       const finalizedData = {
         ...extractedData,
-        image: finalImage,
-        firmLogo: firmLogo // Include the auto-logo
+        image: finalImage
       };
       
       onAdd(finalizedData);

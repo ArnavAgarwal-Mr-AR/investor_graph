@@ -6,20 +6,22 @@ import Minimap from './Minimap';
 export const CLUSTER_CENTERS = {
   'ENTERPRISE & SAAS': { x: -600, y: -400 },
   'FINTECH & WEB3': { x: 600, y: -400 },
-  'CONSUMER & COMMERCE': { x: 800, y: 400 },
-  'DEEPTECH & AI': { x: -800, y: 400 },
-  'CLIMATE & IMPACT': { x: 0, y: 600 },
-  'GROWTH & PE': { x: 0, y: -700 }
+  'CONSUMER & COMMERCE': { x: 800, y: 300 },
+  'DEEPTECH & AI': { x: -800, y: 300 },
+  'CLIMATE & IMPACT': { x: -300, y: 700 },
+  'GROWTH & PE': { x: 0, y: -700 },
+  'HEALTHCARE & PHARMA': { x: 300, y: 700 }
 };
 
 export const getPrimaryCluster = (tags) => {
   const t = tags[0]?.toLowerCase() || '';
-  if (t.includes('saas') || t.includes('enterprise') || t.includes('b2b') || t.includes('software')) return 'ENTERPRISE & SAAS';
-  if (t.includes('fintech') || t.includes('web3') || t.includes('crypto')) return 'FINTECH & WEB3';
-  if (t.includes('consumer') || t.includes('d2c') || t.includes('commerce') || t.includes('marketplace') || t.includes('edtech') || t.includes('health') || t.includes('logistics') || t.includes('media') || t.includes('agritech') || t.includes('retail') || t.includes('classifieds')) return 'CONSUMER & COMMERCE';
-  if (t.includes('deeptech') || t.includes('ai') || t.includes('hardware') || t.includes('robotics')) return 'DEEPTECH & AI';
-  if (t.includes('impact') || t.includes('climate') || t.includes('infrastructure')) return 'CLIMATE & IMPACT';
+  if (t.includes('health') || t.includes('pharma') || t.includes('medical')) return 'HEALTHCARE & PHARMA';
+  if (t.includes('saas') || t.includes('enterprise') || t.includes('b2b') || t.includes('software') || t.includes('cloud') || t.includes('developer') || t.includes('manufacturing')) return 'ENTERPRISE & SAAS';
+  if (t.includes('fintech') || t.includes('web3') || t.includes('crypto') || t.includes('financ') || t.includes('insurance')) return 'FINTECH & WEB3';
+  if (t.includes('impact') || t.includes('climate') || t.includes('infrastructure') || t.includes('sustain') || t.includes('dpi') || t.includes('policy')) return 'CLIMATE & IMPACT';
+  if (t.includes('deeptech') || t.includes('ai') || t.includes('hardware') || t.includes('robotics') || t.includes('ev') || t.includes('mobility')) return 'DEEPTECH & AI';
   if (t.includes('growth') || t.includes('private equity') || t.includes('late')) return 'GROWTH & PE';
+  if (t.includes('consumer') || t.includes('d2c') || t.includes('commerce') || t.includes('marketplace') || t.includes('edtech') || t.includes('logistics') || t.includes('media') || t.includes('agritech') || t.includes('retail') || t.includes('classifieds') || t.includes('proptech') || t.includes('hospitality') || t.includes('food') || t.includes('fmcg') || t.includes('social')) return 'CONSUMER & COMMERCE';
   return 'ENTERPRISE & SAAS'; // fallback
 };
 
@@ -184,7 +186,8 @@ export default function DealFloor({
           const pathData = `M${link.source.x},${link.source.y} Q${link.source.x + dx/2},${link.source.y + dy/2 + 50} ${link.target.x},${link.target.y}`;
           
           // Thickness based on strength, made slightly thinner for secondary links
-          const strokeWidth = link.type === 'syndicate' ? (link.strength * 2) + 1 : 1.5;
+          const strengthVal = link.strength || 0.5;
+          const strokeWidth = link.type === 'syndicate' ? (strengthVal * 2) + 1 : 1.5;
           
           // Check if either connected node is selected to make band glow
           const isHighlighted = selectedInvestor && 
@@ -204,7 +207,22 @@ export default function DealFloor({
       {/* DOM Layer for Capital Mass Tiles */}
       <div className="tiles-layer">
         {nodesRef.current.map(node => {
-          const isFaded = activeFilter && getPrimaryCluster(node.tags) !== activeFilter;
+          let isFaded = false;
+
+          if (selectedInvestor) {
+            if (node.id === selectedInvestor.id) {
+               isFaded = false;
+            } else {
+               const isConnected = linksRef.current.some(link => 
+                 (link.source.id === selectedInvestor.id && link.target.id === node.id) ||
+                 (link.target.id === selectedInvestor.id && link.source.id === node.id)
+               );
+               isFaded = !isConnected;
+            }
+          } else if (activeFilter && getPrimaryCluster(node.tags) !== activeFilter) {
+            isFaded = true;
+          }
+
           return (
           <CapitalTile 
             key={node.id} 
@@ -212,7 +230,7 @@ export default function DealFloor({
             onDragStart={handleDragStart}
             onDrag={handleDrag}
             onDragEnd={handleDragEnd}
-            onClick={(n) => { if(!isFaded) onSelectInvestor(n); }}
+            onClick={(n) => { if (!isFaded || selectedInvestor) onSelectInvestor(n); }}
             selected={selectedInvestor && selectedInvestor.id === node.id}
             isFaded={isFaded}
           />

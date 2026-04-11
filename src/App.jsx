@@ -185,7 +185,10 @@ function App() {
         <ControlStrip
           onAdd={() => setIsOnboarding(true)}
           onFilterToggle={() => setShowFilter(!showFilter)}
-          onReset={() => setResetCounter(c => c + 1)}
+          onReset={() => {
+            setResetCounter(c => c + 1);
+            setActiveFilter('');
+          }}
         />
         <AnimatePresence>
           {showFilter && <FilterMenu activeFilter={activeFilter} onSelectFilter={setActiveFilter} onClose={() => setShowFilter(false)} />}

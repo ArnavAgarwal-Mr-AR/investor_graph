@@ -25,9 +25,6 @@ export default function NegotiationSidebar({ investor, onClose }) {
               <div className="entity-info">
                 <div className="entity-name">{investor.name}</div>
                 <div className="firm-row">
-                  {investor.firmLogo && (
-                    <img src={investor.firmLogo} alt="" className="firm-mini-logo" />
-                  )}
                   <div className="entity-firm text-muted">{investor.firm}</div>
                 </div>
               </div>
