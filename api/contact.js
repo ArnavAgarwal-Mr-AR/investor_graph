@@ -12,55 +12,54 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields.' });
   }
 
-  // Regex validation for email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return res.status(400).json({ error: 'Invalid email address.' });
-  }
+  console.log(`📩 Incoming support request from: ${name} (${email})`);
 
   try {
-    // Determine port and secure flag dynamically
-    const port = parseInt(process.env.SMTP_PORT || '465', 10);
-    const isSecure = port === 465;
-
-    // Create a Nodemailer transporter
+    const port = parseInt(process.env.SMTP_PORT || '587', 10);
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: port,
-      secure: isSecure,
+      secure: port === 465, // true for 465, false for other ports
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        // Do not fail on invalid certs
+        rejectUnauthorized: false
+      }
     });
 
     // Email Options
+    // NOTE: Use SMTP_FROM exactly as the sender. 
+    // We put the user's name in the "Name" part of the from field, 
+    // but the email MUST be your authenticated one.
     const mailOptions = {
-        from: `"${name}" <${process.env.SMTP_FROM || process.env.SMTP_USER}>`, // typically your own authenticated sender
-        replyTo: email,
-        to: process.env.SMTP_TO, // where you want to receive it
-        subject: `[Deal Floor Contact] - ${subject}`,
+        from: `${name} <${process.env.SMTP_FROM}>`, 
+        replyTo: email, 
+        to: process.env.SMTP_TO,
+        subject: `[Deal Floor Support] ${subject}`,
         html: `
-          <div style="font-family: sans-serif; background: #f9f9f9; padding: 20px;">
-            <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #eaeaea;">
-                <h2 style="margin-top: 0; color: #333;">New Contact Request</h2>
-                <hr style="border: none; border-top: 1px solid #eaeaea; margin: 20px 0;" />
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email (Reply-To):</strong> <a href="mailto:${email}">${email}</a></p>
-                <p><strong>Subject:</strong> ${subject}</p>
-                <p><strong>Message:</strong></p>
-                <div style="background: #f4f4f4; padding: 15px; border-radius: 5px; white-space: pre-wrap;">${details}</div>
-            </div>
+          <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+            <h2 style="color: #333;">New Message Received</h2>
+            <p><strong>From:</strong> ${name} (${email})</p>
+            <p><strong>Subject:</strong> ${subject}</p>
+            <hr />
+            <p><strong>Message:</strong></p>
+            <div style="white-space: pre-wrap; background: #f9f9f9; padding: 15px; border-radius: 5px;">${details}</div>
           </div>
         `,
     };
 
-    // Send Mail
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log(`✅ Email sent successfully: ${info.messageId}`);
 
     return res.status(200).json({ message: 'Support request transmitted successfully.' });
   } catch (error) {
-    console.error('SMTP Error:', error);
-    return res.status(500).json({ error: 'Failed to transmit message. Please confirm SMTP configurations.' });
+    console.error('❌ SMTP Transmission Error:', error);
+    return res.status(500).json({ 
+      error: 'Failed to transmit message.',
+      diag: error.message 
+    });
   }
 }
