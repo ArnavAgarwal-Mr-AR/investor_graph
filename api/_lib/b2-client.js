@@ -16,7 +16,8 @@ export const getB2Client = () => {
         accessKeyId: process.env.B2_KEY_ID,
         secretAccessKey: process.env.B2_APP_KEY,
       },
-      region: "us-west-004",
+      region: "ca-east-006",
+      forcePathStyle: true,
     });
   }
   return s3;

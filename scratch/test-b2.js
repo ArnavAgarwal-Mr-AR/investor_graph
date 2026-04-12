@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand, ListObjectsCommand } from "@aws-sdk/client-s3";
+import { S3Client, PutObjectCommand, ListObjectsCommand, GetObjectCommand } from "@aws-sdk/client-s3";
 import fs from "fs";
 import dotenv from "dotenv";
 dotenv.config({ path: '.env.local' });
@@ -18,14 +18,14 @@ async function testSingleUpload() {
   const buffer = fs.readFileSync(file);
   
   try {
-    const response = await s3.send(new PutObjectCommand({
+    const response = await s3.send(new GetObjectCommand({
       Bucket: process.env.B2_BUCKET_NAME,
-      Key: "WRITE_TEST.txt",
-      Body: "Entitlement Test Path",
+      Key: "bulk_1776029584088_aman_gupta.jpg", // A known uploaded key
     }));
-    console.log("✅ WRITE SUCCESS! Key has full PutObject permissions.");
+    console.log("✅ FETCH SUCCESS! Proxy can retrieve images from B2.");
+    console.log("Content Type:", response.ContentType);
   } catch (err) {
-    console.error("❌ WRITE FAILED!");
+    console.error("❌ FETCH FAILED!");
     console.error("Message:", err.message);
   }
 }

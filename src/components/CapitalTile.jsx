@@ -64,7 +64,11 @@ export default function CapitalTile({
       <div className="tile-glow-top" style={{ background: `linear-gradient(90deg, transparent, ${accentColor}40, transparent)` }} />
 
       <div className="tile-header">
-        <img src={node.image} alt={node.name} className="tile-avatar" />
+        <img 
+          src={node.image.startsWith('http') ? node.image : `/api/get-image?key=${node.image}`} 
+          alt={node.name} 
+          className="tile-avatar" 
+        />
         <div className="tile-title">
           <div className="tile-name">{node.name}</div>
           <div className="tile-firm text-muted">{node.firm}</div>

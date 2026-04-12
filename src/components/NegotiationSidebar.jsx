@@ -21,7 +21,11 @@ export default function NegotiationSidebar({ investor, onClose }) {
 
           <div className="sidebar-content">
             <div className="entity-hero">
-              <img src={investor.image} alt={investor.name} className="hero-avatar" />
+              <img 
+                src={investor.image.startsWith('http') ? investor.image : `/api/get-image?key=${investor.image}`} 
+                alt={investor.name} 
+                className="hero-avatar" 
+              />
               <div className="entity-info">
                 <div className="entity-name">{investor.name}</div>
                 <div className="firm-row">
