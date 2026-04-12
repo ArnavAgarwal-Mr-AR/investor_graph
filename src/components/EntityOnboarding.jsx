@@ -19,11 +19,11 @@ export default function EntityOnboarding({ onAdd, onClose }) {
         "Awaiting Manual Dossier Upload...",
         "Identity assembled."
       ];
-      
+
       let i = 0;
       const interval = setInterval(async () => {
         setLog(prev => [...prev, logs[i]]);
-        
+
         // When we reach the mirroring step, trigger the API
         if (logs[i].includes("Mapping LinkedIn profile")) {
           try {
@@ -58,7 +58,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
     e.preventDefault();
     if (url) {
       setPhase('parsing');
-      
+
       const parts = url.split('/in/')[1]?.split('/')[0]?.split('-') || ['New', 'Investor'];
       const name = parts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join(' ');
       const firm = ["Private Syndicate", "Investment Group", "Venture Partner", "Family Office", "Angel Network"][Math.floor(Math.random() * 5)];
@@ -72,7 +72,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
         tags: ["Strategic"],
         weight: 6,
         type: "flow",
-        education: "Verified Graduate", 
+        education: "Verified Graduate",
         pastExperience: "Industry Professional"
       });
     }
@@ -94,7 +94,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
             contentType: selectedFile.type
           })
         });
-        
+
         const { uploadUrl, objectKey } = await response.json();
 
         // 2. Upload directly to B2
@@ -103,7 +103,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
           headers: { 'Content-Type': selectedFile.type },
           body: selectedFile
         });
-        
+
         finalImage = objectKey;
       }
 
@@ -112,7 +112,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
         ...extractedData,
         image: finalImage
       };
-      
+
       onAdd(finalizedData);
     } catch (err) {
       console.error("Upload failure:", err);
@@ -121,15 +121,15 @@ export default function EntityOnboarding({ onAdd, onClose }) {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="onboarding-overlay"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <div className="backdrop-blur" onClick={onClose} />
-      
-      <motion.div 
+
+      <motion.div
         className="onboarding-modal glass-panel"
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
@@ -139,11 +139,11 @@ export default function EntityOnboarding({ onAdd, onClose }) {
           <div className="phase-input">
             <h2 className="title">Onboard Entity</h2>
             <p className="subtitle text-muted">Paste LinkedIn or Crunchbase URL to construct identity.</p>
-            
+
             <form onSubmit={handleSubmit} className="input-form">
-              <input 
-                type="text" 
-                placeholder="https://linkedin.com/in/..." 
+              <input
+                type="text"
+                placeholder="https://linkedin.com/in/..."
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
                 autoFocus
@@ -161,7 +161,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
             <div className="log-container mono">
               <AnimatePresence>
                 {log.map((line, idx) => (
-                  <motion.div 
+                  <motion.div
                     key={idx}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -180,7 +180,7 @@ export default function EntityOnboarding({ onAdd, onClose }) {
 
         {phase === 'complete' && (
           <div className="phase-complete">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: 'spring' }}
@@ -194,9 +194,9 @@ export default function EntityOnboarding({ onAdd, onClose }) {
 
             <div className="file-upload-section">
               <label className="file-label mono">
-                <input 
-                  type="file" 
-                  accept="image/*" 
+                <input
+                  type="file"
+                  accept="image/*"
                   onChange={(e) => setSelectedFile(e.target.files[0])}
                   style={{ display: 'none' }}
                 />
@@ -204,9 +204,9 @@ export default function EntityOnboarding({ onAdd, onClose }) {
               </label>
             </div>
 
-            <button 
-              className="submit-btn primary" 
-              onClick={handleFileUpload} 
+            <button
+              className="submit-btn primary"
+              onClick={handleFileUpload}
               style={{ marginTop: '24px' }}
             >
               {selectedFile ? "Upload & Drop onto Floor" : "Drop with Placeholder"}

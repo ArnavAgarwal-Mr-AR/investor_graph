@@ -4,11 +4,12 @@ import ControlStrip from './components/ControlStrip';
 import NegotiationSidebar from './components/NegotiationSidebar';
 import TopSearch from './components/TopSearch';
 import EntityOnboarding from './components/EntityOnboarding';
+import ContactForm from './components/ContactForm';
 import ErrorBoundary from './components/ErrorBoundary';
 import FilterMenu from './components/FilterMenu';
 import { AnimatePresence, motion } from 'framer-motion';
 import { fetchGraphData, createInvestor } from './neo4j';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, MessageSquare } from 'lucide-react';
 
 function App() {
   const [data, setData] = useState({ nodes: [], links: [], loading: true, error: null });
@@ -18,6 +19,7 @@ function App() {
   const [summonedEntity, setSummonedEntity] = useState(null);
   const [showFilter, setShowFilter] = useState(false);
   const [activeFilter, setActiveFilter] = useState('');
+  const [showContact, setShowContact] = useState(false);
 
   async function loadData() {
     setData(prev => ({ ...prev, loading: true }));
@@ -203,9 +205,20 @@ function App() {
         />
 
         {/* Fullscreen blocking overlay for LinkedIn add flow */}
-        {isOnboarding && (
-          <EntityOnboarding onAdd={handleAddInvestor} onClose={() => setIsOnboarding(false)} />
-        )}
+        <AnimatePresence>
+          {isOnboarding && (
+            <EntityOnboarding onAdd={handleAddInvestor} onClose={() => setIsOnboarding(false)} />
+          )}
+          {showContact && <ContactForm onClose={() => setShowContact(false)} />}
+        </AnimatePresence>
+
+        <button 
+          className="contact-floating-btn glass-panel"
+          onClick={() => setShowContact(true)}
+          title="Contact Support"
+        >
+          <MessageSquare size={20} />
+        </button>
 
         {/* Generic styling to make overlay items absolutely positioned */}
         <style>{`
@@ -214,6 +227,31 @@ function App() {
           width: 100vw;
           height: 100vh;
           overflow: hidden;
+        }
+        
+        .contact-floating-btn {
+          position: absolute;
+          bottom: 24px;
+          right: 24px;
+          width: 48px;
+          height: 48px;
+          border-radius: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--color-accent-blue);
+          border: 1px solid rgba(0, 210, 255, 0.3);
+          background: rgba(10, 10, 15, 0.8);
+          cursor: pointer;
+          z-index: 100;
+          transition: all 0.2s;
+        }
+
+        .contact-floating-btn:hover {
+          background: rgba(0, 210, 255, 0.1);
+          border-color: var(--color-accent-blue);
+          transform: scale(1.05);
+          box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
         }
       `}</style>
       </div>

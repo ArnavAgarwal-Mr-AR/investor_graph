@@ -1,0 +1,1855 @@
+[
+  {
+    "id": "i1",
+    "name": "Shailendra Singh",
+    "firm": "Peak XV Partners",
+    "image": "./scripts/assets/Shailendra Singh.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "Bain & Company",
+    "deployed": "$9B+ (India & SEA)",
+    "weight": 15,
+    "type": "elite",
+    "tags": [
+      "SaaS",
+      "Consumer",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/peakxv.com"
+  },
+  {
+    "id": "i2",
+    "name": "Rajan Anandan",
+    "firm": "Peak XV Partners",
+    "image": "./scripts/assets/Rajan Anandan.jpg",
+    "education": "MIT / Stanford GSB",
+    "pastExperience": "Google India MD",
+    "deployed": "$9B+ (India & SEA)",
+    "weight": 14,
+    "type": "elite",
+    "tags": [
+      "AI/ML",
+      "B2B SaaS",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/peakxv.com"
+  },
+  {
+    "id": "i3",
+    "name": "Anand Daniel",
+    "firm": "Accel India",
+    "image": "./scripts/assets/Anand Daniel.jpg",
+    "education": "MIT",
+    "pastExperience": "Intel",
+    "deployed": "$2B+ (India, 8 funds)",
+    "weight": 13,
+    "type": "elite",
+    "tags": [
+      "Marketplace",
+      "Healthcare",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/accel.com"
+  },
+  {
+    "id": "i4",
+    "name": "Prashanth Prakash",
+    "firm": "Accel India",
+    "image": "./scripts/assets/Prashanth Prakash.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "Bain & Company",
+    "deployed": "$2B+ (India, 8 funds)",
+    "weight": 13,
+    "type": "elite",
+    "tags": [
+      "Agritech",
+      "Consumer",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/accel.com"
+  },
+  {
+    "id": "i5",
+    "name": "Subrata Mitra",
+    "firm": "Accel India",
+    "image": "./scripts/assets/Subrata Mitra.jpg",
+    "education": "Stanford GSB",
+    "pastExperience": "McKinsey",
+    "deployed": "$2B+ (India, 8 funds)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "E-commerce",
+      "SaaS",
+      "B2B"
+    ],
+    "firmLogo": "https://logo.clearbit.com/accel.com"
+  },
+  {
+    "id": "i6",
+    "name": "Avnish Bajaj",
+    "firm": "Z47 (Matrix India)",
+    "image": "./scripts/assets/Avnish Bajaj.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "Baazee.com Founder (acq. eBay)",
+    "deployed": "$550M+ (latest fund)",
+    "weight": 13,
+    "type": "elite",
+    "tags": [
+      "Consumer",
+      "Marketplaces",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/z47.com"
+  },
+  {
+    "id": "i7",
+    "name": "Tarun Davda",
+    "firm": "Z47 (Matrix India)",
+    "image": "./scripts/assets/Tarun Davda.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Bain & Company",
+    "deployed": "$550M+ (latest fund)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Fintech",
+      "Mobility",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/z47.com"
+  },
+  {
+    "id": "i8",
+    "name": "Suvir Sujan",
+    "firm": "Nexus Venture Partners",
+    "image": "./scripts/assets/Suvir Sujan.jpg",
+    "education": "Wharton",
+    "pastExperience": "Baazee.com Co-founder",
+    "deployed": "$700M (latest fund)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "SaaS",
+      "Enterprise",
+      "Cross-border"
+    ],
+    "firmLogo": "https://logo.clearbit.com/nexusvp.com"
+  },
+  {
+    "id": "i9",
+    "name": "Jishnu Bhattacharjee",
+    "firm": "Nexus Venture Partners",
+    "image": "./scripts/assets/Jishnu Bhattacharjee.jpg",
+    "education": "IIT Bombay",
+    "pastExperience": "McKinsey",
+    "deployed": "$700M (latest fund)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Deeptech",
+      "AI Infrastructure",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/nexusvp.com"
+  },
+  {
+    "id": "i10",
+    "name": "Ravi Adusumalli",
+    "firm": "Elevation Capital",
+    "image": "./scripts/assets/Ravi Adusumalli.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Microsoft",
+    "deployed": "$670M (latest fund)",
+    "weight": 13,
+    "type": "elite",
+    "tags": [
+      "Consumer Tech",
+      "Fintech",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/elevationcapital.com"
+  },
+  {
+    "id": "i11",
+    "name": "Mukul Arora",
+    "firm": "Elevation Capital",
+    "image": "./scripts/assets/Mukul Arora.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Goldman Sachs",
+    "deployed": "$670M (latest fund)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Logistics",
+      "Consumer",
+      "E-commerce"
+    ],
+    "firmLogo": "https://logo.clearbit.com/elevationcapital.com"
+  },
+  {
+    "id": "i12",
+    "name": "Karthik Reddy",
+    "firm": "Blume Ventures",
+    "image": "./scripts/assets/Karthik Reddy.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "ICICI Venture",
+    "deployed": "$600M+ (5 funds)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "Deeptech",
+      "Robotics",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/blume.vc"
+  },
+  {
+    "id": "i13",
+    "name": "Sanjay Nath",
+    "firm": "Blume Ventures",
+    "image": "./scripts/assets/Sanjay Nath.jpg",
+    "education": "IIT Delhi",
+    "pastExperience": "Motorola",
+    "deployed": "$600M+ (5 funds)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "B2B",
+      "Enterprise",
+      "Deeptech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/blume.vc"
+  },
+  {
+    "id": "i14",
+    "name": "Vani Kola",
+    "firm": "Kalaari Capital",
+    "image": "./scripts/assets/Vani Kola.jpg",
+    "education": "Stanford GSB",
+    "pastExperience": "Serial Entrepreneur (RightWorks, Certus)",
+    "deployed": "$740M+ (multiple funds)",
+    "weight": 10,
+    "type": "flow",
+    "tags": [
+      "D2C",
+      "E-commerce",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/kalaari.com"
+  },
+  {
+    "id": "i15",
+    "name": "Sudhir Sethi",
+    "firm": "Chiratae Ventures",
+    "image": "./scripts/assets/Sudhir Sethi.jpg",
+    "education": "IIT Delhi / IIM Ahmedabad",
+    "pastExperience": "IDG Ventures Founder",
+    "deployed": "$1B+",
+    "weight": 10,
+    "type": "flow",
+    "tags": [
+      "Healthtech",
+      "Consumer",
+      "AI"
+    ],
+    "firmLogo": "https://logo.clearbit.com/chiratae.com"
+  },
+  {
+    "id": "i16",
+    "name": "TC Meenakshisundaram",
+    "firm": "Chiratae Ventures",
+    "image": "./scripts/assets/TC Meenakshisundaram.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "Microsoft",
+    "deployed": "$1B+",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "Enterprise",
+      "SaaS",
+      "Robotics"
+    ],
+    "firmLogo": "https://logo.clearbit.com/chiratae.com"
+  },
+  {
+    "id": "i17",
+    "name": "Anand Lunia",
+    "firm": "India Quotient",
+    "image": "./scripts/assets/Anand Lunia.jpg",
+    "education": "BITS Pilani",
+    "pastExperience": "SAP Labs",
+    "deployed": "$300M+ (3 funds)",
+    "weight": 6,
+    "type": "flow",
+    "tags": [
+      "Consumer",
+      "Media",
+      "Vernacular"
+    ],
+    "firmLogo": "https://logo.clearbit.com/indiaquotient.in"
+  },
+  {
+    "id": "i18",
+    "name": "Pranav Pai",
+    "firm": "3one4 Capital",
+    "image": "./scripts/assets/Pranav Pai.jpg",
+    "education": "IIT Bombay",
+    "pastExperience": "Aarin Capital",
+    "deployed": "$400M+ (4 funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Fintech",
+      "D2C",
+      "Deeptech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/3one4.com"
+  },
+  {
+    "id": "i19",
+    "name": "Siddarth Pai",
+    "firm": "3one4 Capital",
+    "image": "./scripts/assets/Siddarth Pai.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "Aarin Capital",
+    "deployed": "$400M+ (4 funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "Software",
+      "SaaS",
+      "Policy"
+    ],
+    "firmLogo": "https://logo.clearbit.com/3one4.com"
+  },
+  {
+    "id": "i20",
+    "name": "Vikram Vaidyanathan",
+    "firm": "Z47 (Matrix India)",
+    "image": "./scripts/assets/Vikram Vaidyanathan.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "McKinsey",
+    "deployed": "$550M+ (latest fund)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Fintech",
+      "Web3",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/z47.com"
+  },
+  {
+    "id": "i21",
+    "name": "Alex Cook",
+    "firm": "Tiger Global India",
+    "image": "./scripts/assets/Alex Cook.jpg",
+    "education": "Princeton",
+    "pastExperience": "Morgan Stanley",
+    "deployed": "$5B+ (India deployment)",
+    "weight": 14,
+    "type": "elite",
+    "tags": [
+      "Growth",
+      "E-commerce",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/tigerglobal.com"
+  },
+  {
+    "id": "i22",
+    "name": "Sumer Juneja",
+    "firm": "SoftBank Vision Fund",
+    "image": "./scripts/assets/Sumer Juneja.jpg",
+    "education": "Oxford / INSEAD",
+    "pastExperience": "Goldman Sachs",
+    "deployed": "$10B+ (India deployment)",
+    "weight": 15,
+    "type": "elite",
+    "tags": [
+      "Growth",
+      "Mobility",
+      "Consumer Tech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/softbank.com"
+  },
+  {
+    "id": "i23",
+    "name": "Ravi Mhatre",
+    "firm": "Lightspeed India",
+    "image": "./scripts/assets/Ravi Mhatre.jpg",
+    "education": "Stanford GSB",
+    "pastExperience": "Bessemer Venture Partners",
+    "deployed": "$500M (Fund IV)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "Enterprise",
+      "Cloud",
+      "B2B Commerce"
+    ],
+    "firmLogo": "https://logo.clearbit.com/lsvp.com"
+  },
+  {
+    "id": "i24",
+    "name": "Bejul Somaia",
+    "firm": "Lightspeed India",
+    "image": "./scripts/assets/Bejul Somaia.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "BCG",
+    "deployed": "$500M (Fund IV)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "Edtech",
+      "Marketplace",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/lsvp.com"
+  },
+  {
+    "id": "i25",
+    "name": "Dev Khare",
+    "firm": "Lightspeed India",
+    "image": "./scripts/assets/Dev Khare.jpg",
+    "education": "IIT Bombay / Carnegie Mellon",
+    "pastExperience": "Microsoft",
+    "deployed": "$500M (Fund IV)",
+    "weight": 10,
+    "type": "elite",
+    "tags": [
+      "B2B Commerce",
+      "Fintech",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/lsvp.com"
+  },
+  {
+    "id": "i26",
+    "name": "Ashish Kumar",
+    "firm": "Fundamentum",
+    "image": "./scripts/assets/Ashish Kumar.jpg",
+    "education": "IIT Bombay / IIM Ahmedabad",
+    "pastExperience": "Bain & Company",
+    "deployed": "$400M+ (2 funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Growth",
+      "SaaS",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/fundamentum.in"
+  },
+  {
+    "id": "i27",
+    "name": "Nandan Nilekani",
+    "firm": "Fundamentum",
+    "image": "./scripts/assets/Nandan Nilekani.jpg",
+    "education": "IIT Bombay",
+    "pastExperience": "Infosys Co-founder / UIDAI Chairman",
+    "deployed": "$400M+ (2 funds)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "Public Infrastructure",
+      "Fintech",
+      "DPI"
+    ],
+    "firmLogo": "https://logo.clearbit.com/fundamentum.in"
+  },
+  {
+    "id": "i28",
+    "name": "Renuka Ramnath",
+    "firm": "Multiples PE",
+    "image": "./scripts/assets/Renuka Ramnath.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "ICICI Venture CEO",
+    "deployed": "$1.4B+ (3 funds)",
+    "weight": 10,
+    "type": "flow",
+    "tags": [
+      "Private Equity",
+      "Healthcare",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/multiplesequity.com"
+  },
+  {
+    "id": "i29",
+    "name": "Ashish Gupta",
+    "firm": "Helion Ventures",
+    "image": "./scripts/assets/Ashish Gupta.jpg",
+    "education": "IIT Delhi / Stanford",
+    "pastExperience": "Junglee Co-founder (acq. Amazon)",
+    "deployed": "$600M+ (3 funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Consumer tech",
+      "SaaS",
+      "Enterprise"
+    ],
+    "firmLogo": "https://logo.clearbit.com/helionvc.com"
+  },
+  {
+    "id": "i30",
+    "name": "Kunal Bahl",
+    "firm": "Titan Capital",
+    "image": "./scripts/assets/Kunal Bahl.jpg",
+    "education": "Wharton",
+    "pastExperience": "Snapdeal Co-founder",
+    "deployed": "$100M+",
+    "weight": 6,
+    "type": "passive",
+    "tags": [
+      "D2C",
+      "Consumer",
+      "E-commerce"
+    ],
+    "firmLogo": "https://logo.clearbit.com/titancapital.vc"
+  },
+  {
+    "id": "i31",
+    "name": "Rohit Bansal",
+    "firm": "Titan Capital",
+    "image": "./scripts/assets/Rohit Bansal.jpg",
+    "education": "IIT Delhi",
+    "pastExperience": "Snapdeal Co-founder",
+    "deployed": "$100M+",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "SaaS",
+      "E-commerce",
+      "D2C"
+    ],
+    "firmLogo": "https://logo.clearbit.com/titancapital.vc"
+  },
+  {
+    "id": "i32",
+    "name": "Binny Bansal",
+    "firm": "021 Capital",
+    "image": "./scripts/assets/Binny Bansal.jpg",
+    "education": "IIT Delhi",
+    "pastExperience": "Flipkart Co-founder",
+    "deployed": "$200M+",
+    "weight": 7,
+    "type": "passive",
+    "tags": [
+      "E-commerce",
+      "Growth",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/021capital.com"
+  },
+  {
+    "id": "i33",
+    "name": "Sachin Bansal",
+    "firm": "Navi",
+    "image": "./scripts/assets/Sachin Bansal.jpg",
+    "education": "IIT Delhi",
+    "pastExperience": "Flipkart Co-founder",
+    "deployed": "$200M+",
+    "weight": 7,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "Insurance",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/navi.com"
+  },
+  {
+    "id": "i34",
+    "name": "Ratan Tata",
+    "firm": "RNT Associates",
+    "image": "./scripts/assets/Ratan Tata.jpg",
+    "education": "Cornell University",
+    "pastExperience": "Tata Group Chairman",
+    "deployed": "Confidential",
+    "weight": 8,
+    "type": "passive",
+    "tags": [
+      "Impact",
+      "Mobility",
+      "Healthcare"
+    ],
+    "firmLogo": "https://logo.clearbit.com/tata.com"
+  },
+  {
+    "id": "i35",
+    "name": "Anupam Mittal",
+    "firm": "People Group / Angel",
+    "image": "./scripts/assets/Anupam Mittal.jpg",
+    "education": "Boston University",
+    "pastExperience": "Shaadi.com Founder",
+    "deployed": "$30M+",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "D2C",
+      "Media",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/shaadi.com"
+  },
+  {
+    "id": "i36",
+    "name": "Aman Gupta",
+    "firm": "boAt / Angel",
+    "image": "./scripts/assets/Aman Gupta.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "KPMG / Citibank",
+    "deployed": "$20M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "Hardware",
+      "D2C",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/boat-lifestyle.com"
+  },
+  {
+    "id": "i37",
+    "name": "Peyush Bansal",
+    "firm": "Lenskart / Angel",
+    "image": "./scripts/assets/Peyush Bansal.jpg",
+    "education": "IIT Delhi / McGill",
+    "pastExperience": "Microsoft",
+    "deployed": "$20M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "D2C",
+      "Retail",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/lenskart.com"
+  },
+  {
+    "id": "i38",
+    "name": "Naval Ravikant",
+    "firm": "AngelList / Angel",
+    "image": "./scripts/assets/Naval Ravikant.jpg",
+    "education": "Dartmouth College",
+    "pastExperience": "Epinions / AngelList Co-founder",
+    "deployed": "$100M+",
+    "weight": 8,
+    "type": "passive",
+    "tags": [
+      "Web3",
+      "Deeptech",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/angel.co"
+  },
+  {
+    "id": "i39",
+    "name": "Gokul Rajaram",
+    "firm": "Angel Investor",
+    "image": "./scripts/assets/Gokul Rajaram.jpg",
+    "education": "IIT Bombay / MIT",
+    "pastExperience": "Google / Meta / DoorDash",
+    "deployed": "$50M+",
+    "weight": 6,
+    "type": "passive",
+    "tags": [
+      "SaaS",
+      "Fintech",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/doordash.com"
+  },
+  {
+    "id": "i40",
+    "name": "Sanjeev Bikhchandani",
+    "firm": "Info Edge",
+    "image": "./scripts/assets/Sanjeev Bikhchandani.jpg",
+    "education": "IIT Delhi / IIM Ahmedabad",
+    "pastExperience": "Naukri.com Founder",
+    "deployed": "$600M+ (Info Edge Ventures)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Classifieds",
+      "Foodtech",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/infoedge.in"
+  },
+  {
+    "id": "i41",
+    "name": "Mridul Arora",
+    "firm": "Elevation Capital",
+    "image": "./scripts/assets/Mridul Arora.jpg",
+    "education": "IIT Delhi",
+    "pastExperience": "Google",
+    "deployed": "$670M (latest fund)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "Fintech",
+      "SaaS",
+      "Consumer Tech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/elevationcapital.com"
+  },
+  {
+    "id": "i42",
+    "name": "Mohit Bhatnagar",
+    "firm": "Peak XV Partners",
+    "image": "./scripts/assets/Mohit Bhatnagar.jpg",
+    "education": "IIT Bombay / Wharton",
+    "pastExperience": "Qualcomm Ventures",
+    "deployed": "$9B+ (India & SEA)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "Edtech",
+      "Marketplaces",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/peakxv.com"
+  },
+  {
+    "id": "i43",
+    "name": "G.V. Ravishankar",
+    "firm": "Peak XV Partners",
+    "image": "./scripts/assets/G.V. Ravishankar.jpg",
+    "education": "BITS Pilani / IIM Ahmedabad",
+    "pastExperience": "Bain & Company",
+    "deployed": "$9B+ (India & SEA)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Consumer",
+      "D2C",
+      "Healthcare"
+    ],
+    "firmLogo": "https://logo.clearbit.com/peakxv.com"
+  },
+  {
+    "id": "i44",
+    "name": "Harshjit Sethi",
+    "firm": "Peak XV Partners",
+    "image": "./scripts/assets/Harshjit Sethi.jpg",
+    "education": "IIT Bombay / Cambridge",
+    "pastExperience": "BCG",
+    "deployed": "$9B+ (India & SEA)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "SaaS",
+      "Web3",
+      "AI/ML"
+    ],
+    "firmLogo": "https://logo.clearbit.com/peakxv.com"
+  },
+  {
+    "id": "i45",
+    "name": "Varun Bajaj",
+    "firm": "QED Investors",
+    "image": "./scripts/assets/Varun Bajaj.jpg",
+    "education": "IIT Bombay",
+    "pastExperience": "Bain & Company",
+    "deployed": "$300M+ (India deployment)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "Fintech",
+      "Lending",
+      "Insurance"
+    ],
+    "firmLogo": "https://logo.clearbit.com/qedinvestors.com"
+  },
+  {
+    "id": "i46",
+    "name": "Anjali Bansal",
+    "firm": "Avaana Capital",
+    "image": "./scripts/assets/Anjali Bansal.jpg",
+    "education": "IIT Bombay / Wharton",
+    "pastExperience": "Spencer Stuart / TPG",
+    "deployed": "$200M+ (2 funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Climate Tech",
+      "Sustainability",
+      "Impact"
+    ],
+    "firmLogo": "https://logo.clearbit.com/avaana.in"
+  },
+  {
+    "id": "i47",
+    "name": "Hemant Mohapatra",
+    "firm": "Lightspeed India",
+    "image": "./scripts/assets/Hemant Mohapatra.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Google / Amazon",
+    "deployed": "$500M (Fund IV)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "SaaS",
+      "Deeptech",
+      "AI/ML"
+    ],
+    "firmLogo": "https://logo.clearbit.com/lsvp.com"
+  },
+  {
+    "id": "i48",
+    "name": "Maninder Gulati",
+    "firm": "OYO / Angel",
+    "image": "./scripts/assets/Maninder Gulati.jpg",
+    "education": "IIT Delhi / ISB",
+    "pastExperience": "OYO Global Strategy",
+    "deployed": "$15M+",
+    "weight": 3,
+    "type": "passive",
+    "tags": [
+      "Proptech",
+      "Consumer",
+      "Hospitality"
+    ],
+    "firmLogo": "https://logo.clearbit.com/oyorooms.com"
+  },
+  {
+    "id": "i49",
+    "name": "Roopa Kudva",
+    "firm": "Omidyar Network India",
+    "image": "./scripts/assets/Roopa Kudva.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "CRISIL CEO",
+    "deployed": "$400M+ (deployed, fund now winding)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Impact",
+      "Financial Inclusion",
+      "Edtech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/omidyar.com"
+  },
+  {
+    "id": "i50",
+    "name": "Sajith Pai",
+    "firm": "Blume Ventures",
+    "image": "./scripts/assets/Sajith Pai.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Manipal Health / Media",
+    "deployed": "$600M+ (5 funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "Edtech",
+      "Consumer",
+      "Media"
+    ],
+    "firmLogo": "https://logo.clearbit.com/blume.vc"
+  },
+  {
+    "id": "i52",
+    "name": "Sandeep Singhal",
+    "firm": "WestBridge Capital",
+    "image": "./scripts/assets/Sandeep Singhal.jpg",
+    "education": "IIT Delhi / Harvard Business School",
+    "pastExperience": "Nexus Co-founder",
+    "deployed": "$3B+ (multi-stage)",
+    "weight": 13,
+    "type": "elite",
+    "tags": [
+      "Growth",
+      "Consumer",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/westbridgecapital.com"
+  },
+  {
+    "id": "i53",
+    "name": "K.P. Balaraj",
+    "firm": "WestBridge Capital",
+    "image": "./scripts/assets/K.P. Balaraj.jpg",
+    "education": "IIT Madras / Stanford",
+    "pastExperience": "Goldman Sachs",
+    "deployed": "$3B+ (multi-stage)",
+    "weight": 13,
+    "type": "elite",
+    "tags": [
+      "Growth",
+      "Fintech",
+      "Healthcare"
+    ],
+    "firmLogo": "https://logo.clearbit.com/westbridgecapital.com"
+  },
+  {
+    "id": "i54",
+    "name": "Alok Goyal",
+    "firm": "Stellaris Venture Partners",
+    "image": "./scripts/assets/Alok Goyal.jpg",
+    "education": "IIT Delhi / IIM Ahmedabad",
+    "pastExperience": "SAP / Helion",
+    "deployed": "$300M+ (3 funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "SaaS",
+      "B2B",
+      "Enterprise"
+    ],
+    "firmLogo": "https://logo.clearbit.com/stellarisvp.com"
+  },
+  {
+    "id": "i55",
+    "name": "Ritesh Banglani",
+    "firm": "Stellaris Venture Partners",
+    "image": "./scripts/assets/Ritesh Banglani.jpg",
+    "education": "IIT Bombay / Duke",
+    "pastExperience": "Helion Ventures",
+    "deployed": "$300M+ (3 funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "SaaS",
+      "Consumer Brands",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/stellarisvp.com"
+  },
+  {
+    "id": "i56",
+    "name": "Kannan Sitaram",
+    "firm": "Fireside Ventures",
+    "image": "./scripts/assets/Kannan Sitaram.jpg",
+    "education": "IIT Madras / IIM Ahmedabad",
+    "pastExperience": "Hindustan Unilever / Ascent Capital",
+    "deployed": "$400M+ (3 funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "D2C",
+      "Consumer Brands",
+      "FMCG"
+    ],
+    "firmLogo": "https://logo.clearbit.com/firesideventures.in"
+  },
+  {
+    "id": "i57",
+    "name": "Vinay Singh",
+    "firm": "Fireside Ventures",
+    "image": "./scripts/assets/Vinay Singh.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Unilever / A.T. Kearney",
+    "deployed": "$400M+ (3 funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "D2C",
+      "FMCG",
+      "Retail"
+    ],
+    "firmLogo": "https://logo.clearbit.com/firesideventures.in"
+  },
+  {
+    "id": "i58",
+    "name": "Gautam Mago",
+    "firm": "A91 Partners",
+    "image": "./scripts/assets/Gautam Mago.jpg",
+    "education": "IIT Delhi / Wharton",
+    "pastExperience": "Sequoia Capital India",
+    "deployed": "$1.3B+ (3 funds incl. $665M Fund III)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Consumer",
+      "Financial Services",
+      "Healthcare"
+    ],
+    "firmLogo": "https://logo.clearbit.com/a91partners.com"
+  },
+  {
+    "id": "i59",
+    "name": "Abhay Pandey",
+    "firm": "A91 Partners",
+    "image": "./scripts/assets/Abhay Pandey.jpg",
+    "education": "IIT Kanpur / IIM Ahmedabad",
+    "pastExperience": "Sequoia Capital India",
+    "deployed": "$1.3B+ (3 funds incl. $665M Fund III)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Consumer",
+      "Manufacturing",
+      "Technology"
+    ],
+    "firmLogo": "https://logo.clearbit.com/a91partners.com"
+  },
+  {
+    "id": "i60",
+    "name": "Rahul Chowdhri",
+    "firm": "Stellaris Venture Partners",
+    "image": "./scripts/assets/Rahul Chowdhri.jpg",
+    "education": "IIT Delhi / Harvard Business School",
+    "pastExperience": "Helion Ventures",
+    "deployed": "$300M+ (3 funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "SaaS",
+      "Vertical SaaS",
+      "B2B"
+    ],
+    "firmLogo": "https://logo.clearbit.com/stellarisvp.com"
+  },
+  {
+    "id": "i61",
+    "name": "Amit Somani",
+    "firm": "Prime Venture Partners",
+    "image": "./scripts/assets/Amit Somani.jpg",
+    "education": "IIT Delhi / IIM Ahmedabad",
+    "pastExperience": "Google / MakeMyTrip CPO",
+    "deployed": "$200M+ (multiple funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Fintech",
+      "SaaS",
+      "Healthcare"
+    ],
+    "firmLogo": "https://logo.clearbit.com/primevp.in"
+  },
+  {
+    "id": "i62",
+    "name": "Sanjay Swamy",
+    "firm": "Prime Venture Partners",
+    "image": "./scripts/assets/Sanjay Swamy.jpg",
+    "education": "IIT Bombay / University of Maryland",
+    "pastExperience": "mChek Co-founder / eVentures",
+    "deployed": "$200M+ (multiple funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "Fintech",
+      "DPI",
+      "B2B"
+    ],
+    "firmLogo": "https://logo.clearbit.com/primevp.in"
+  },
+  {
+    "id": "i63",
+    "name": "Sumant Mandal",
+    "firm": "March Capital / Trikona",
+    "image": "./scripts/assets/Sumant Mandal.jpg",
+    "education": "IIT Bombay / Wharton",
+    "pastExperience": "Ventana Capital",
+    "deployed": "$400M+",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Enterprise",
+      "AI/ML",
+      "Deeptech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/marchcp.com"
+  },
+  {
+    "id": "i64",
+    "name": "Shripati Acharya",
+    "firm": "Prime Venture Partners",
+    "image": "./scripts/assets/Shripati Acharya.jpg",
+    "education": "IIT Bombay / Stanford",
+    "pastExperience": "PayPal / Adea Mobile",
+    "deployed": "$200M+ (multiple funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "Fintech",
+      "SaaS",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/primevp.in"
+  },
+  {
+    "id": "i65",
+    "name": "Nikhil Kamath",
+    "firm": "Gruhas / Zerodha",
+    "image": "./scripts/assets/Nikhil Kamath.jpg",
+    "education": "Self-taught / No formal degree",
+    "pastExperience": "Zerodha Co-founder",
+    "deployed": "$100M+",
+    "weight": 7,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "Real Estate",
+      "Climate Tech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/zerodha.com"
+  },
+  {
+    "id": "i66",
+    "name": "Nithin Kamath",
+    "firm": "Rainmatter Capital",
+    "image": "./scripts/assets/Nithin Kamath.jpg",
+    "education": "Self-taught",
+    "pastExperience": "Zerodha Founder & CEO",
+    "deployed": "$150M+",
+    "weight": 8,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "Climate Tech",
+      "Health"
+    ],
+    "firmLogo": "https://logo.clearbit.com/rainmatter.com"
+  },
+  {
+    "id": "i67",
+    "name": "Deepak Shahdadpuri",
+    "firm": "DSG Consumer Partners",
+    "image": "./scripts/assets/Deepak Shahdadpuri.jpg",
+    "education": "Harvard Business School",
+    "pastExperience": "DB Group / Saffron Brand Consultants",
+    "deployed": "$250M+ (multiple funds)",
+    "weight": 8,
+    "type": "flow",
+    "tags": [
+      "Consumer Brands",
+      "Food & Beverage",
+      "D2C"
+    ],
+    "firmLogo": "https://logo.clearbit.com/dsgcp.com"
+  },
+  {
+    "id": "i68",
+    "name": "Rahul Mehta",
+    "firm": "DST Global",
+    "image": "./scripts/assets/Rahul Mehta.jpg",
+    "education": "IIT Bombay / Wharton",
+    "pastExperience": "Goldman Sachs",
+    "deployed": "$3B+ (India deployment)",
+    "weight": 13,
+    "type": "elite",
+    "tags": [
+      "Growth",
+      "Consumer",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/dst.gs"
+  },
+  {
+    "id": "i69",
+    "name": "Tarun Mehta",
+    "firm": "Ather Energy / Angel",
+    "image": "./scripts/assets/Tarun Mehta.jpg",
+    "education": "IIT Madras",
+    "pastExperience": "Ather Energy Co-founder",
+    "deployed": "$20M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "EV",
+      "Hardware",
+      "Deeptech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/atherenergy.com"
+  },
+  {
+    "id": "i70",
+    "name": "Rehan Yar Khan",
+    "firm": "Orios Venture Partners",
+    "image": "./scripts/assets/Rehan Yar Khan.jpg",
+    "education": "IIT Delhi / Wharton",
+    "pastExperience": "GSF India Founder",
+    "deployed": "$200M+ (3 funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "Consumer",
+      "D2C",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/oriosvp.com"
+  },
+  {
+    "id": "i71",
+    "name": "Anand Chandrasekaran",
+    "firm": "General Catalyst India",
+    "image": "./scripts/assets/Anand Chandrasekaran.jpg",
+    "education": "IIT Madras / Stanford",
+    "pastExperience": "Snapdeal CPO / Facebook / Yahoo",
+    "deployed": "$500M+ (India, via Venture Highway merger)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "AI/ML",
+      "Consumer",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/generalcatalyst.com"
+  },
+  {
+    "id": "i72",
+    "name": "Neeraj Arora",
+    "firm": "Angel Investor",
+    "image": "./scripts/assets/Neeraj Arora.jpg",
+    "education": "IIT Delhi / Harvard Business School",
+    "pastExperience": "WhatsApp Business Head (acq. by Facebook)",
+    "deployed": "$100M+",
+    "weight": 7,
+    "type": "passive",
+    "tags": [
+      "Consumer",
+      "Fintech",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/whatsapp.com"
+  },
+  {
+    "id": "i73",
+    "name": "Shekhar Kirani",
+    "firm": "Accel India",
+    "image": "./scripts/assets/Shekhar Kirani.jpg",
+    "education": "BITS Pilani / Carnegie Mellon",
+    "pastExperience": "Ariba / SAP",
+    "deployed": "$2B+ (India, 8 funds)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "SaaS",
+      "B2B",
+      "Enterprise"
+    ],
+    "firmLogo": "https://logo.clearbit.com/accel.com"
+  },
+  {
+    "id": "i74",
+    "name": "Prayank Swaroop",
+    "firm": "Accel India",
+    "image": "./scripts/assets/Prayank Swaroop.jpg",
+    "education": "IIT Kanpur / Wharton",
+    "pastExperience": "Microsoft / mGinger",
+    "deployed": "$2B+ (India, 8 funds)",
+    "weight": 10,
+    "type": "elite",
+    "tags": [
+      "AI/ML",
+      "SaaS",
+      "Marketplace"
+    ],
+    "firmLogo": "https://logo.clearbit.com/accel.com"
+  },
+  {
+    "id": "i75",
+    "name": "Ishaan Mittal",
+    "firm": "Peak XV Partners",
+    "image": "./scripts/assets/Ishaan Mittal.jpg",
+    "education": "IIT Bombay / Harvard Business School",
+    "pastExperience": "Bain & Company",
+    "deployed": "$9B+ (India & SEA)",
+    "weight": 10,
+    "type": "elite",
+    "tags": [
+      "Fintech",
+      "Consumer",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/peakxv.com"
+  },
+  {
+    "id": "i76",
+    "name": "Abhishek Goyal",
+    "firm": "Tracxn / Angel",
+    "image": "./scripts/assets/Abhishek Goyal.jpg",
+    "education": "IIT Kanpur / Stanford",
+    "pastExperience": "Accel India / Amazon",
+    "deployed": "$20M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "SaaS",
+      "Marketplace",
+      "Data"
+    ],
+    "firmLogo": "https://logo.clearbit.com/tracxn.com"
+  },
+  {
+    "id": "i77",
+    "name": "Anil Joshi",
+    "firm": "Unicorn India Ventures",
+    "image": "./scripts/assets/Anil Joshi.jpg",
+    "education": "IIT Bombay / IIM Bangalore",
+    "pastExperience": "IDBI Ventures",
+    "deployed": "$100M+ (multiple funds)",
+    "weight": 6,
+    "type": "flow",
+    "tags": [
+      "Deeptech",
+      "Healthtech",
+      "SaaS"
+    ],
+    "firmLogo": "https://logo.clearbit.com/unicornindia.in"
+  },
+  {
+    "id": "i78",
+    "name": "Haresh Chawla",
+    "firm": "India Value Fund Advisors",
+    "image": "./scripts/assets/Haresh Chawla.jpg",
+    "education": "IIT Bombay / Wharton",
+    "pastExperience": "Network18 CEO",
+    "deployed": "$1B+ (IVFA multi-funds)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "Media",
+      "Consumer",
+      "E-commerce"
+    ],
+    "firmLogo": "https://logo.clearbit.com/ivfa.in"
+  },
+  {
+    "id": "i79",
+    "name": "Sumir Chadha",
+    "firm": "WestBridge Capital",
+    "image": "./scripts/assets/Sumir Chadha.jpg",
+    "education": "IIT Delhi / Wharton",
+    "pastExperience": "Goldman Sachs / Sequoia",
+    "deployed": "$3B+ (multi-stage)",
+    "weight": 12,
+    "type": "elite",
+    "tags": [
+      "Growth",
+      "Healthcare",
+      "Financial Services"
+    ],
+    "firmLogo": "https://logo.clearbit.com/westbridgecapital.com"
+  },
+  {
+    "id": "i80",
+    "name": "Deepak Gaur",
+    "firm": "Elevation Capital",
+    "image": "./scripts/assets/Deepak Gaur.jpg",
+    "education": "IIT Delhi / IIM Lucknow",
+    "pastExperience": "SAIF Partners India",
+    "deployed": "$200M+",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "B2B",
+      "SaaS",
+      "Marketplace"
+    ],
+    "firmLogo": "https://logo.clearbit.com/nipponindiaim.com"
+  },
+  {
+    "id": "i81",
+    "name": "Rahul Taneja",
+    "firm": "Lightspeed India",
+    "image": "./scripts/assets/Rahul Taneja.jpg",
+    "education": "IIT Bombay / Harvard Business School",
+    "pastExperience": "BCG",
+    "deployed": "$500M (Fund IV)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "Consumer",
+      "Quick Commerce",
+      "Marketplace"
+    ],
+    "firmLogo": "https://logo.clearbit.com/lsvp.com"
+  },
+  {
+    "id": "i82",
+    "name": "Shweta Bhatia",
+    "firm": "Eight Roads Ventures India",
+    "image": "./scripts/assets/Shweta Bhatia.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Fidelity Growth Partners",
+    "deployed": "$500M+ (India deployment)",
+    "weight": 9,
+    "type": "flow",
+    "tags": [
+      "Healthtech",
+      "Consumer",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/eightroadsindia.com"
+  },
+  {
+    "id": "i83",
+    "name": "Arpit Agarwal",
+    "firm": "Blume Ventures",
+    "image": "./scripts/assets/Arpit Agarwal.jpg",
+    "education": "IIT Roorkee / IIM Ahmedabad",
+    "pastExperience": "Rocket Internet / Groupon",
+    "deployed": "$600M+ (5 funds)",
+    "weight": 7,
+    "type": "flow",
+    "tags": [
+      "Deeptech",
+      "B2B",
+      "Robotics"
+    ],
+    "firmLogo": "https://logo.clearbit.com/blume.vc"
+  },
+  {
+    "id": "i84",
+    "name": "Niren Shah",
+    "firm": "Norwest Venture Partners India",
+    "image": "./scripts/assets/Niren Shah.jpg",
+    "education": "IIM Ahmedabad",
+    "pastExperience": "Warburg Pincus",
+    "deployed": "$500M+ (India deployment)",
+    "weight": 10,
+    "type": "elite",
+    "tags": [
+      "Financial Services",
+      "Healthcare",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/nvp.com"
+  },
+  {
+    "id": "i85",
+    "name": "Hetal Sonpal",
+    "firm": "Steadview Capital",
+    "image": "./scripts/assets/Hetal Sonpal.jpg",
+    "education": "IIT Bombay / Harvard Business School",
+    "pastExperience": "Citadel / Fidelity",
+    "deployed": "$1B+ (India deployment)",
+    "weight": 11,
+    "type": "elite",
+    "tags": [
+      "Growth",
+      "Consumer Tech",
+      "Fintech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/steadviewcapital.com"
+  },
+  {
+    "id": "a1",
+    "name": "Kunal Shah",
+    "firm": "CRED / Angel",
+    "image": "./scripts/assets/Kunal Shah.jpg",
+    "education": "Wilson College Mumbai (Philosophy)",
+    "pastExperience": "FreeCharge Founder / CRED Founder",
+    "deployed": "$60M+ (200+ investments)",
+    "weight": 8,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "Consumer",
+      "D2C"
+    ],
+    "firmLogo": "https://logo.clearbit.com/cred.club"
+  },
+  {
+    "id": "a2",
+    "name": "Vijay Shekhar Sharma",
+    "firm": "Paytm / Angel",
+    "image": "./scripts/assets/Vijay Shekhar Sharma.jpg",
+    "education": "Delhi College of Engineering",
+    "pastExperience": "Paytm Founder & CEO",
+    "deployed": "$40M+ (Unacademy, NoBroker, Treebo)",
+    "weight": 7,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "Consumer",
+      "Edtech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/paytm.com"
+  },
+  {
+    "id": "a3",
+    "name": "Ashneer Grover",
+    "firm": "BharatPe / Angel",
+    "image": "./scripts/assets/Ashneer Grover.jpg",
+    "education": "IIT Delhi / IIM Ahmedabad",
+    "pastExperience": "BharatPe Co-founder / Kotak Investment Banking",
+    "deployed": "$20M+",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "D2C",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/bharatpe.com"
+  },
+  {
+    "id": "a4",
+    "name": "Ghazal Alagh",
+    "firm": "Mamaearth / Angel",
+    "image": "./scripts/assets/Ghazal Alagh.jpg",
+    "education": "Kurukshetra University / Vogue Institute of Art & Design",
+    "pastExperience": "Mamaearth Co-founder",
+    "deployed": "$10M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "D2C",
+      "Consumer Brands",
+      "FMCG"
+    ],
+    "firmLogo": "https://logo.clearbit.com/mamaearth.in"
+  },
+  {
+    "id": "a5",
+    "name": "Namita Thapar",
+    "firm": "Emcure Pharmaceuticals / Angel",
+    "image": "./scripts/assets/Namita Thapar.jpg",
+    "education": "Pune University / Duke University (MBA)",
+    "pastExperience": "Emcure Pharma Executive Director",
+    "deployed": "$15M+ (healthcare & D2C focus)",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "Healthcare",
+      "Pharma",
+      "D2C"
+    ],
+    "firmLogo": "https://logo.clearbit.com/emcure.co.in"
+  },
+  {
+    "id": "a6",
+    "name": "Vineeta Singh",
+    "firm": "SUGAR Cosmetics / Angel",
+    "image": "./scripts/assets/Vineeta Singh.jpg",
+    "education": "IIT Madras / IIM Ahmedabad",
+    "pastExperience": "SUGAR Cosmetics Co-founder & CEO",
+    "deployed": "$10M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "D2C",
+      "Consumer Brands",
+      "Retail"
+    ],
+    "firmLogo": "https://logo.clearbit.com/sugarcosmetics.com"
+  },
+  {
+    "id": "a7",
+    "name": "Amit Jain",
+    "firm": "CarDekho / Angel",
+    "image": "./scripts/assets/Amit Jain.jpg",
+    "education": "IIT Delhi",
+    "pastExperience": "CarDekho Co-founder & CEO",
+    "deployed": "$20M+ (mobility & fintech)",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "Mobility",
+      "Fintech",
+      "Marketplace"
+    ],
+    "firmLogo": "https://logo.clearbit.com/cardekho.com"
+  },
+  {
+    "id": "a8",
+    "name": "Sandeep Nailwal",
+    "firm": "Polygon / Symbolic Capital",
+    "image": "./scripts/assets/Sandeep Nailwal.jpg",
+    "education": "Kumaun University",
+    "pastExperience": "Polygon Co-founder",
+    "deployed": "$100M+ (Web3 & crypto focus)",
+    "weight": 7,
+    "type": "passive",
+    "tags": [
+      "Web3",
+      "Blockchain",
+      "Deeptech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/polygon.technology"
+  },
+  {
+    "id": "a9",
+    "name": "Sanjay Mehta",
+    "firm": "100X.VC",
+    "image": "./scripts/assets/Sanjay Mehta.jpg",
+    "education": "Mumbai University",
+    "pastExperience": "MAIA Intelligence / Mumbai Angels",
+    "deployed": "$50M+ (iSAFE pioneer, 100+ investments)",
+    "weight": 6,
+    "type": "passive",
+    "tags": [
+      "Consumer",
+      "SaaS",
+      "Pre-seed"
+    ],
+    "firmLogo": "https://logo.clearbit.com/100x.vc"
+  },
+  {
+    "id": "a10",
+    "name": "Jitendra Gupta",
+    "firm": "Jupiter / Angel",
+    "image": "./scripts/assets/Jitendra Gupta.jpg",
+    "education": "NIT Trichy / IIM Ahmedabad",
+    "pastExperience": "Citrus Pay Co-founder (acq. by PayU) / Jupiter Founder",
+    "deployed": "$20M+ (fintech & consumer)",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "Consumer",
+      "Neobanking"
+    ],
+    "firmLogo": "https://logo.clearbit.com/jupiter.money"
+  },
+  {
+    "id": "a11",
+    "name": "Deepinder Goyal",
+    "firm": "Zomato / Angel",
+    "image": "./scripts/assets/Deepinder Goyal.jpg",
+    "education": "IIT Delhi",
+    "pastExperience": "Zomato Founder & CEO",
+    "deployed": "$30M+",
+    "weight": 6,
+    "type": "passive",
+    "tags": [
+      "Foodtech",
+      "Consumer",
+      "Hyperlocal"
+    ],
+    "firmLogo": "https://logo.clearbit.com/zomato.com"
+  },
+  {
+    "id": "a12",
+    "name": "Ritesh Agarwal",
+    "firm": "OYO / Angel",
+    "image": "./scripts/assets/Ritesh Agarwal.jpg",
+    "education": "Self-taught (dropped out)",
+    "pastExperience": "OYO Founder & CEO",
+    "deployed": "$15M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "Proptech",
+      "Hospitality",
+      "Consumer"
+    ],
+    "firmLogo": "https://logo.clearbit.com/oyorooms.com"
+  },
+  {
+    "id": "a13",
+    "name": "Bhavish Aggarwal",
+    "firm": "Ola / Angel",
+    "image": "./scripts/assets/Bhavish Aggarwal.jpg",
+    "education": "IIT Bombay",
+    "pastExperience": "Ola / Ola Electric Founder",
+    "deployed": "$20M+",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "Mobility",
+      "EV",
+      "Consumer Tech"
+    ],
+    "firmLogo": "https://logo.clearbit.com/olacabs.com"
+  },
+  {
+    "id": "a14",
+    "name": "Aprameya Radhakrishna",
+    "firm": "TaxiForSure / Angel",
+    "image": "./scripts/assets/Aprameya Radhakrishna.jpg",
+    "education": "NIT Karnataka / IIM Ahmedabad",
+    "pastExperience": "TaxiForSure Co-founder (acq. by Ola) / Koo Co-founder",
+    "deployed": "$15M+ (30+ investments)",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "Consumer",
+      "Mobility",
+      "Social Media"
+    ],
+    "firmLogo": "https://logo.clearbit.com/kooapp.com"
+  },
+  {
+    "id": "a15",
+    "name": "Ankit Nagori",
+    "firm": "Curefoods / Angel",
+    "image": "./scripts/assets/Ankit Nagori.jpg",
+    "education": "IIT Kanpur",
+    "pastExperience": "Flipkart Chief Business Officer / Curefoods Founder",
+    "deployed": "$10M+ (Xeno, Rapido, Groww)",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "Foodtech",
+      "Consumer",
+      "Health"
+    ],
+    "firmLogo": "https://logo.clearbit.com/curefoods.in"
+  },
+  {
+    "id": "a16",
+    "name": "Girish Mathrubootham",
+    "firm": "Freshworks / Angel",
+    "image": "./scripts/assets/Girish Mathrubootham.jpg",
+    "education": "PSG College of Technology / Anna University",
+    "pastExperience": "Freshworks Founder & CEO",
+    "deployed": "$30M+ (SaaS & enterprise focus)",
+    "weight": 6,
+    "type": "passive",
+    "tags": [
+      "SaaS",
+      "Enterprise",
+      "B2B"
+    ],
+    "firmLogo": "https://logo.clearbit.com/freshworks.com"
+  },
+  {
+    "id": "a17",
+    "name": "Pallav Nadhani",
+    "firm": "FusionCharts / Angel",
+    "image": "./scripts/assets/Pallav Nadhani.jpg",
+    "education": "Self-taught",
+    "pastExperience": "FusionCharts Co-founder",
+    "deployed": "$15M+ (SaaS & developer tools)",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "SaaS",
+      "Developer Tools",
+      "B2B"
+    ],
+    "firmLogo": "https://logo.clearbit.com/fusioncharts.com"
+  },
+  {
+    "id": "a18",
+    "name": "Neeraj Kakkar",
+    "firm": "Hector Beverages / Angel",
+    "image": "./scripts/assets/Neeraj Kakkar.jpg",
+    "education": "IIT Delhi / IIM Ahmedabad",
+    "pastExperience": "Coca-Cola India / Paper Boat Founder",
+    "deployed": "$10M+ (FMCG & D2C)",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "FMCG",
+      "Consumer Brands",
+      "Food & Beverage"
+    ],
+    "firmLogo": "https://logo.clearbit.com/paperboat.com"
+  },
+  {
+    "id": "a19",
+    "name": "Suhail Sameer",
+    "firm": "BharatPe / Angel",
+    "image": "./scripts/assets/Suhail Sameer.jpg",
+    "education": "IIT Delhi / London Business School",
+    "pastExperience": "BharatPe CEO / eBay / Reliance",
+    "deployed": "$15M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "Fintech",
+      "Consumer",
+      "Marketplace"
+    ],
+    "firmLogo": "https://logo.clearbit.com/bharatpe.com"
+  },
+  {
+    "id": "a20",
+    "name": "Kashyap Deorah",
+    "firm": "HyperTrack / Angel",
+    "image": "./scripts/assets/Kashyap Deorah.jpg",
+    "education": "IIT Bombay",
+    "pastExperience": "Chaupaati Bazaar / OpenTable India",
+    "deployed": "$15M+ (30+ investments)",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "SaaS",
+      "Logistics",
+      "Developer Tools"
+    ],
+    "firmLogo": "https://logo.clearbit.com/hypertrack.com"
+  },
+  {
+    "id": "a21",
+    "name": "Vaibhav Domkundwar",
+    "firm": "Better Capital",
+    "image": "./scripts/assets/Vaibhav Domkundwar.jpg",
+    "education": "IIT Bombay / Carnegie Mellon",
+    "pastExperience": "Nokia / Motorola",
+    "deployed": "$30M+ (100+ deals, solo GP)",
+    "weight": 5,
+    "type": "passive",
+    "tags": [
+      "SaaS",
+      "Fintech",
+      "B2B"
+    ],
+    "firmLogo": "https://logo.clearbit.com/bettercapital.us"
+  },
+  {
+    "id": "a22",
+    "name": "Shradha Sharma",
+    "firm": "YourStory / Angel",
+    "image": "./scripts/assets/Shradha Sharma.jpg",
+    "education": "Patna University / Times School of Journalism",
+    "pastExperience": "YourStory Founder & CEO",
+    "deployed": "$5M+ (media & content startups)",
+    "weight": 3,
+    "type": "passive",
+    "tags": [
+      "Media",
+      "Consumer",
+      "D2C"
+    ],
+    "firmLogo": "https://logo.clearbit.com/yourstory.com"
+  },
+  {
+    "id": "a23",
+    "name": "Ramakant Sharma",
+    "firm": "Livspace / Angel",
+    "image": "./scripts/assets/Ramakant Sharma.jpg",
+    "education": "IIT Kanpur / ISB Hyderabad",
+    "pastExperience": "Myntra COO / Livspace Co-founder",
+    "deployed": "$15M+ (proptech & consumer)",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "Proptech",
+      "Consumer",
+      "Marketplace"
+    ],
+    "firmLogo": "https://logo.clearbit.com/livspace.com"
+  },
+  {
+    "id": "a24",
+    "name": "Phani Kishan",
+    "firm": "Meesho / Angel",
+    "image": "./scripts/assets/Phani Kishan.jpg",
+    "education": "IIT Bombay",
+    "pastExperience": "Meesho Co-founder",
+    "deployed": "$10M+",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "E-commerce",
+      "Consumer",
+      "Social Commerce"
+    ],
+    "firmLogo": "https://logo.clearbit.com/meesho.com"
+  },
+  {
+    "id": "a25",
+    "name": "Amit Ranjan",
+    "firm": "DigiLocker / Angel",
+    "image": "./scripts/assets/Amit Ranjan.jpg",
+    "education": "IIT Kanpur",
+    "pastExperience": "SlideShare Co-founder (acq. by LinkedIn) / DigiLocker Architect",
+    "deployed": "$10M+ (DPI & open-source tech)",
+    "weight": 4,
+    "type": "passive",
+    "tags": [
+      "DPI",
+      "SaaS",
+      "Public Infrastructure"
+    ],
+    "firmLogo": "https://logo.clearbit.com/digilocker.gov.in"
+  }
+]

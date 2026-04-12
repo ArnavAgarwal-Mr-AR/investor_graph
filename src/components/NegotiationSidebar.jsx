@@ -30,7 +30,7 @@ export default function NegotiationSidebar({ investor, onClose }) {
               </div>
             </div>
             <div className="divider" />
-            
+
             <div className="section">
               <div className="section-title">
                 <Activity size={14} className="text-gold" />

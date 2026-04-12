@@ -1,27 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function CapitalTile({ 
-  node, 
-  onDragStart, 
-  onDrag, 
-  onDragEnd, 
-  onClick, 
+export default function CapitalTile({
+  node,
+  onDragStart,
+  onDrag,
+  onDragEnd,
+  onClick,
   selected,
   isFaded
 }) {
   // Visuals driven by "Capital Weight"
   const scale = node.weight > 8 ? 1.05 : node.weight < 5 ? 0.95 : 1;
-  const shadow = node.weight > 8 
-    ? 'var(--shadow-heavy-weight)' 
-    : node.weight < 5 
-      ? 'var(--shadow-light-weight)' 
+  const shadow = node.weight > 8
+    ? 'var(--shadow-heavy-weight)'
+    : node.weight < 5
+      ? 'var(--shadow-light-weight)'
       : 'var(--shadow-medium-weight)';
 
-  const accentColor = node.type === 'elite' 
-    ? 'var(--color-accent-gold)' 
-    : node.type === 'flow' 
-      ? 'var(--color-accent-green)' 
+  const accentColor = node.type === 'elite'
+    ? 'var(--color-accent-gold)'
+    : node.type === 'flow'
+      ? 'var(--color-accent-green)'
       : 'var(--color-accent-blue)';
 
   return (
@@ -44,11 +44,11 @@ export default function CapitalTile({
       onDrag={(e, info) => onDrag(node, info)}
       onDragEnd={() => onDragEnd(node)}
       onClick={() => onClick(node)}
-      
+
       // Idle animation vs Dragging animation
       initial={{ scale: 0, opacity: 0 }}
-      animate={{ 
-        scale, 
+      animate={{
+        scale,
         opacity: isFaded ? 0.15 : 1,
         // When selected or elite, maybe a slight pulse
         boxShadow: selected ? `0 0 30px ${accentColor}40, ${shadow}` : shadow,
@@ -62,7 +62,7 @@ export default function CapitalTile({
       className={`capital-tile glass-panel ${selected ? 'selected' : ''}`}
     >
       <div className="tile-glow-top" style={{ background: `linear-gradient(90deg, transparent, ${accentColor}40, transparent)` }} />
-      
+
       <div className="tile-header">
         <img src={node.image} alt={node.name} className="tile-avatar" />
         <div className="tile-title">

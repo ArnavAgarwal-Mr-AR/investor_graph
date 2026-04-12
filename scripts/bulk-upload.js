@@ -21,11 +21,12 @@ const endpoint = rawEndpoint.startsWith('http') ? rawEndpoint : `https://${rawEn
 
 const s3 = new S3Client({
   endpoint: endpoint,
+  forcePathStyle: true, // Often required for B2/S3 compatibility
   credentials: {
     accessKeyId: process.env.B2_KEY_ID,
     secretAccessKey: process.env.B2_APP_KEY,
   },
-  region: "us-west-004", // General region for B2
+  region: "ca-east-006", 
 });
 
 const BUCKET_NAME = process.env.B2_BUCKET_NAME;
@@ -63,12 +64,11 @@ async function runBulkUpload() {
   if (!fs.existsSync(ASSETS_DIR)) {
     fs.mkdirSync(ASSETS_DIR, { recursive: true });
     console.log(`⚠️ Created directory: ${ASSETS_DIR}`);
-    console.log(`Please place your 100 images here and run the script again.`);
+    console.log(`Please place your images here and run the script again.`);
     return;
   }
 
   const files = fs.readdirSync(ASSETS_DIR).filter(file => {
-    // Only upload image files
     return /\.(jpg|jpeg|png|webp|gif)$/i.test(file);
   });
 
@@ -77,15 +77,13 @@ async function runBulkUpload() {
     return;
   }
 
-  console.log(`🚀 Found ${files.length} images. Starting upload tunnel to B2...\n`);
+  console.log(`🚀 Found ${files.length} images. Starting upload...`);
 
   const assetMap = {};
 
   const uploadFile = async (filename) => {
     const filePath = path.join(ASSETS_DIR, filename);
     const buffer = fs.readFileSync(filePath);
-    
-    // Ensure clean object keys (e.g. "Rajan Anandan.jpg" -> "rajan_anandan_171000.jpg")
     const cleanName = filename.toLowerCase().replace(/\s+/g, '_');
     const objectKey = `bulk_${Date.now()}_${cleanName}`;
     
@@ -94,11 +92,9 @@ async function runBulkUpload() {
         Bucket: BUCKET_NAME,
         Key: objectKey,
         Body: buffer,
-        ContentType: getContentType(filename),
-        ContentLength: buffer.length
+        ContentType: getContentType(filename)
       }));
       
-      // Store the mapping: Original Firm/Person Name -> B2 Key
       const entityName = path.parse(filename).name; 
       assetMap[entityName] = objectKey;
       

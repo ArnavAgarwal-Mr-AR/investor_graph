@@ -1,33 +1,45 @@
-# 🌐 Investor Graph: "The Deal Floor"
+# 🌐 Quantum Capital: The Deal Floor
 
-A tactile, physics-driven visualization interface for the Indian Venture Capital Ecosystem.
+*An Enterprise-Grade Spatial Visualization Engine for Institutional Capital Networks.*
 
-## 🚀 Overview
-The **Deal Floor** abandons traditional, abstract graph network concepts in favor of a "living negotiation surface". Instead of plain nodes and thin lines, the system represents major venture capital firms and angels as **Capital Mass Tiles**—heavy, responsive UI cards that natively sink into a virtual 2D physics field.
+## 🚀 The Architecture
+The hardest question in private equity and venture capital isn't "who has capital?" It's "who holds the power?" 
 
-They interact organically via **Tension Bands**, which visually indicate the strength of real-world deal syndicates.
+Capital allocation is not linear. Deal flow, syndicates, and market influence happen through dense, hidden webs of relationships. When modeled using traditional CRMs or relational databases, the structural integrity of the network is lost in flat lists. 
 
-## ⚡ Features
-- **Headless D3 Physics Engine:** D3 orchestrates the mathematical positioning, while React strictly handles the high-fidelity UI rendering.
-- **Framer Motion Integration:** Allows ultra-smooth interactions, dragging, and complex viewport coordinate mapping.
-- **Dynamic Minimap HUD:** Geometrically scales and tracks the active D3 zoom viewport for infinite canvas orientation.
-- **Smart "Summon" Searching:** A `⌘ K` global command bar that plucks nodes from the void and physically drops them into your immediate view.
-- **Tactical Filtering:** A control strip feature that gracefully transitions nodes into un-clickable "ghosts", focusing only on the selected industry sector.
+The **Deal Floor** abandons standard relational data modeling in favor of a responsive, high-performance spatial map. It computes hundreds of interwoven financial vectors rendering live in the browser, allowing you to instantly visualize the hidden power structures of the market.
 
-## 📁 Documentation
-For detailed architecture, design, and implementation notes, see the `/docs` directory:
+## ⚙️ Core Engineering Systems
+
+### 🧠 The Graph Brain (Neo4j)
+We stripped out traditional SQL backbones for a native Neo4j graph database. Every co-investment, syndicate event, and career correlation operates as a high-fidelity, mathematically traversable edge. We aren't querying tables—we are calculating networks.
+
+### ⚛️ The Physics Engine (D3.js + React)
+Rather than hard-coding UI positions, a headless **D3.js force simulation** processes continuous physics calculations inside React. It utilizes localized collision detection and custom gravity functions to autonomously pull investors into macro-clusters based on real-time market signals.
+
+### 🎯 Dynamic Subgraph Isolation
+When you select a high-gravity entity, the application instantly tracks their entire syndicate tree. In milliseconds, it zeroes out the visual and computational "noise" of the rest of the market—fading background elements into grayscale—to reveal an undisputed sphere of influence.
+
+### 🔒 Zero-Trust Edge Security
+Financial intelligence is highly sensitive. The entire connection layer is abstracted behind **Vercel Serverless** edge functions. Coupled with a custom **Backblaze B2** media buffering pipeline, the frontend architecture is blazingly fast and strictly decoupled from internal data stores.
+
+---
+
+## 📁 Technical Documentation
+For detailed system architecture, scaling, and implementation notes, see the `/docs` directory:
 - [Technical Details](./docs/technical-details.md)
-- [Database Schema](./docs/database.md)
-- [Graph Context & Vision](./docs/graph-context.md)
-- [Design Aesthetics](./docs/design.md)
+- [Database Schema & Data Flow](./docs/database.md)
+- [Graph Context & Intelligence](./docs/graph-context.md)
+- [Design Token System](./docs/design.md)
 - [Component Architecture](./docs/components.md)
 - [Security Proxy Guide](./docs/SECURITY_PROXY.md)
 
-## 🗃️ Data Operations
+## 🗃️ Backend Operations
 To manage the live cloud graph data, use the built-in maintenance scripts:
 - **Export Database to JSON:** `node scripts/export-investors.js`
-- **Sync JSON to Database:** `node scripts/import-investors.js`
-- See [Database Operations Docs](./docs/database.md#3-maintenance--data-operations) for full details.
+- **Sync JSON to Database (MERGE):** `node scripts/import-investors.js`
+- **Bulk Push Images to Secure Cloud:** `node scripts/bulk-upload.js`
+- See [Database Operations Docs](./docs/database.md) for full details.
 
 ## 💻 Quick Start
 ```bash
